@@ -12,7 +12,35 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
 					"name" : "system_clock",
+					"strict" : false
+				},
+				{
+					"name" : "adc_init",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "adc_ready",
 					"strict" : false
 				}
 			]

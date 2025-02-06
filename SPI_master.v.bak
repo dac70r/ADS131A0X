@@ -1,0 +1,13 @@
+
+/* SPI Module */
+
+module SPI_Master 
+(
+	output 	reg		SPI_MOSI,				// SPI MOSI
+	input 				SPI_MISO,				// SPI MISO
+	output	reg		SPI_CS,					//	SPI CS
+	output 				SPI_SCLK					// SPI SCLK
+);
+
+
+endmodule 
