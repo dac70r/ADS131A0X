@@ -1,0 +1,22 @@
+
+/* Clock Synthesizer Module */
+
+module clock_synthesizer #(parameter COUNTER_LIMIT = )(
+    input 				input_clock, 			// input clock  - 50 Mhz
+	 output 				clock_pol				// output clock - 4.167Mhz 
+);
+
+reg [7:0] counter = 8'b0;
+reg clock_state = 1'b0;
+
+always @ (posedge input_clock)
+begin 
+	if(counter == 8'd6) begin counter <= 0; clock_state <= ~clock_state; end
+	else
+		begin counter <= counter + 1; end
+
+end
+
+assign clock_pol = clock_state;
+
+endmodule

@@ -1,0 +1,13 @@
+// ADS131A0x Driver Development Project
+// Interface: 	SPI Protocol, Cyclone 10 LP Intel FPGA
+// Author: 		Dennis Wong
+// Date:			6/2/2025 
+
+
+/* Top Module */
+module ADS131A0X (
+    input 				system_clock,
+	 output 				[3:0]led
+);
+
+endmodule

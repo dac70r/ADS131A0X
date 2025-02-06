@@ -1,0 +1,82 @@
+|ADS131A0X
+system_clock => system_clock.IN2
+led[0] <= heartbeat:heartbeat_uut.clock_pol
+led[1] <= clock_synthesizer:clock_synthesizer_uut.clock_pol
+led[2] <= <VCC>
+led[3] <= <VCC>
+
+
+|ADS131A0X|clock_synthesizer:clock_synthesizer_uut
+input_clock => clock_state.CLK
+input_clock => counter[0].CLK
+input_clock => counter[1].CLK
+input_clock => counter[2].CLK
+input_clock => counter[3].CLK
+input_clock => counter[4].CLK
+input_clock => counter[5].CLK
+input_clock => counter[6].CLK
+input_clock => counter[7].CLK
+input_clock => counter[8].CLK
+input_clock => counter[9].CLK
+input_clock => counter[10].CLK
+input_clock => counter[11].CLK
+input_clock => counter[12].CLK
+input_clock => counter[13].CLK
+input_clock => counter[14].CLK
+input_clock => counter[15].CLK
+input_clock => counter[16].CLK
+input_clock => counter[17].CLK
+input_clock => counter[18].CLK
+input_clock => counter[19].CLK
+input_clock => counter[20].CLK
+input_clock => counter[21].CLK
+input_clock => counter[22].CLK
+input_clock => counter[23].CLK
+input_clock => counter[24].CLK
+input_clock => counter[25].CLK
+input_clock => counter[26].CLK
+input_clock => counter[27].CLK
+input_clock => counter[28].CLK
+input_clock => counter[29].CLK
+input_clock => counter[30].CLK
+input_clock => counter[31].CLK
+clock_pol <= clock_state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ADS131A0X|heartbeat:heartbeat_uut
+input_clock => clock_state.CLK
+input_clock => counter[0].CLK
+input_clock => counter[1].CLK
+input_clock => counter[2].CLK
+input_clock => counter[3].CLK
+input_clock => counter[4].CLK
+input_clock => counter[5].CLK
+input_clock => counter[6].CLK
+input_clock => counter[7].CLK
+input_clock => counter[8].CLK
+input_clock => counter[9].CLK
+input_clock => counter[10].CLK
+input_clock => counter[11].CLK
+input_clock => counter[12].CLK
+input_clock => counter[13].CLK
+input_clock => counter[14].CLK
+input_clock => counter[15].CLK
+input_clock => counter[16].CLK
+input_clock => counter[17].CLK
+input_clock => counter[18].CLK
+input_clock => counter[19].CLK
+input_clock => counter[20].CLK
+input_clock => counter[21].CLK
+input_clock => counter[22].CLK
+input_clock => counter[23].CLK
+input_clock => counter[24].CLK
+input_clock => counter[25].CLK
+input_clock => counter[26].CLK
+input_clock => counter[27].CLK
+input_clock => counter[28].CLK
+input_clock => counter[29].CLK
+input_clock => counter[30].CLK
+input_clock => counter[31].CLK
+clock_pol <= clock_state.DB_MAX_OUTPUT_PORT_TYPE
+
+

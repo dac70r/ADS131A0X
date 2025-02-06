@@ -1,0 +1,22 @@
+
+/* Heartbeat Module */
+
+module hearbeat (
+    input 				input_clock, 			// 50 Mhz system clock
+	 output 				clock_pol				// leds 
+);
+
+reg [31:0] counter = 32'b0;
+reg clock_state = 1'b0;
+
+always @ (posedge input_clock)
+begin 
+	if(counter == 32'b1_999_999) begin counter <= 0; end
+	else
+		begin clock_state <= ~clock_state; end
+
+end
+
+assign clock_pol = clock_state;
+
+endmodule
