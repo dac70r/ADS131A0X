@@ -3,72 +3,72 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 100C Model Setup 'system_clock'
-Slack : -3.963
-TNS   : -144.484
+Slack : -3.743
+TNS   : -135.293
 
-Type  : Slow 1200mV 100C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -0.422
-TNS   : -0.722
+Type  : Slow 1200mV 100C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : -3.301
+TNS   : -106.104
 
-Type  : Slow 1200mV 100C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.418
+Type  : Slow 1200mV 100C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : 0.401
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'system_clock'
 Slack : 0.418
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
 Slack : -3.210
-TNS   : -10.275
+TNS   : -53.965
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'system_clock'
 Slack : -1.481
 TNS   : -88.861
 
 Type  : Slow 1200mV -40C Model Setup 'system_clock'
-Slack : -3.416
-TNS   : -113.957
+Slack : -3.223
+TNS   : -105.356
 
-Type  : Slow 1200mV -40C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -0.224
-TNS   : -0.364
+Type  : Slow 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : -2.852
+TNS   : -90.878
 
-Type  : Slow 1200mV -40C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.344
+Type  : Slow 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : 0.329
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Hold 'system_clock'
 Slack : 0.344
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
 Slack : -3.210
-TNS   : -10.275
+TNS   : -53.965
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'system_clock'
 Slack : -1.481
 TNS   : -88.861
 
 Type  : Fast 1200mV -40C Model Setup 'system_clock'
-Slack : -1.368
-TNS   : -31.137
+Slack : -1.225
+TNS   : -27.658
 
-Type  : Fast 1200mV -40C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.342
-TNS   : 0.000
+Type  : Fast 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : -0.945
+TNS   : -27.781
 
-Type  : Fast 1200mV -40C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.179
+Type  : Fast 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Slack : 0.171
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'system_clock'
 Slack : 0.180
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
 Slack : -3.000
-TNS   : -9.000
+TNS   : -43.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'system_clock'
 Slack : -1.283

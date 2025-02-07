@@ -14,12 +14,14 @@ module ADS131A0X (
 	 output 				SPI_MOSI,				// SPI MOSI
 	 input 				SPI_MISO,				// SPI MISO
 	 output				SPI_CS,					//	SPI CS
-	 output 				SPI_SCLK,					// SPI SCLK
+	 output 				SPI_SCLK,				// SPI SCLK
+	 output 				SPI_RESET,				// SPI_RESET
 	 
 	 /* SPI Signals */
-	input					adc_init,				// Trigger signal to init the adc
-	input 				adc_ready,				// Trigger signal to send SPI transaction
-	output [2:0]		state					// Keeps track of the current state of SPI
+	input					adc_init,				// Trigger signal to init the adc					- for simulation (consider removing in final design)
+	input 				adc_ready,				// Trigger signal to send SPI transaction			- for simulation (consider removing in final design)
+	output [2:0]		state,					// Keeps track of the current state of SPI 		- for debugging (remove in final design)
+	output 				adc_init_completed_z // Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
 );
 
 wire synthesized_clock_1Mhz;					// 1Mhz clock for heartbeat
@@ -30,29 +32,32 @@ wire spi_sclk;										// SPI Clock
 clock_synthesizer clock_synthesizer_uut_1
 (
     .input_clock(system_clock), 							// input clock  - 50 Mhz
-	 .clock_pol(led[1])										// output clock - 1Mhz 
+	 .clock_pol(led[1])										// output clock to led0 @ 1Mhz
 );
 
 /* Heartbeat Instance */
 heartbeat heartbeat_uut(
     .input_clock(system_clock), 							// 50 Mhz system clock
-	 .clock_pol(led[0])										// leds 
+	 .clock_pol(led[0])										// output clock to led0 @ 1Mhz
 );
 
 
 /* SPI_Master Instance */
-SPI_Master 
+SPI_Master SPI_Master_uut
 (
 	.system_clock(system_clock),							// System Clock from FPGA - 50Mhz
 	.reset_n(reset_n),										// Reset_n manually activated by push button	
-	.adc_init(adc_init),										// Trigger signal to init the adc
-	.adc_ready(adc_ready),									// Trigger signal to send SPI transaction
-	.state(state),												// Keeps track of the current state of SPI
-	
 	.SPI_MOSI(SPI_MOSI),										// SPI MOSI
 	.SPI_MISO(SPI_MISO),										// SPI MISO
 	.SPI_CS(SPI_CS),											//	SPI CS
-	.SPI_SCLK(spi_sclk)										// SPI SCLK
+	.SPI_SCLK(spi_sclk),										// SPI SCLK
+	.SPI_RESET(SPI_RESET),
+	
+	/* Non crucial Signals (for simulation and debugging) */
+	.adc_init_completed_z(adc_init_completed_z),
+	.state(state),												// Keeps track of the current state of SPI
+	.adc_init(adc_init),										// Trigger signal to init the adc
+	.adc_ready(adc_ready)									// Trigger signal to send SPI transaction
 );
 
 assign led[3] = 1'b1;										// assign led to low

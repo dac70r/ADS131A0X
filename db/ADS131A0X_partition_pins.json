@@ -20,6 +20,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_RESET",
+					"strict" : false
+				},
+				{
 					"name" : "state[0]",
 					"strict" : false
 				},
@@ -28,15 +32,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "adc_init_completed_z",
+					"strict" : false
+				},
+				{
 					"name" : "system_clock",
 					"strict" : false
 				},
 				{
-					"name" : "adc_init",
+					"name" : "reset_n",
 					"strict" : false
 				},
 				{
-					"name" : "reset_n",
+					"name" : "adc_init",
 					"strict" : false
 				},
 				{

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/output_files/") File("ADS131A0X.sof") MfrSpec(OpMask(1));
+		Device PartName(10CL025Y) Path("C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/output_files/") File("SPI_Master_State_Machine_Complete.jic") MfrSpec(OpMask(1) SEC_Device(EPCQ64) Child_OpMask(1 3));
 
 ChainEnd;
 

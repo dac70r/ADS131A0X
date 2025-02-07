@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADS131A0X
-Thu Feb 06 17:16:23 2025
+Fri Feb 07 15:15:47 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,11 +13,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |ADS131A0X|SPI_Master:comb_3|current_state
+  8. State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Parameter Settings for User Entity Instance: clock_synthesizer:clock_synthesizer_uut_1
- 12. Parameter Settings for User Entity Instance: SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0
+ 12. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0
  13. Post-Synthesis Netlist Statistics for Top Partition
  14. Elapsed Time Per Partition
  15. Analysis & Synthesis Messages
@@ -47,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 06 17:16:23 2025       ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 07 15:15:47 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ADS131A0X                                   ;
 ; Top-level Entity Name              ; ADS131A0X                                   ;
 ; Family                             ; Cyclone 10 LP                               ;
-; Total logic elements               ; 107                                         ;
-;     Total combinational functions  ; 105                                         ;
-;     Dedicated logic registers      ; 71                                          ;
-; Total registers                    ; 71                                          ;
-; Total pins                         ; 15                                          ;
+; Total logic elements               ; 162                                         ;
+;     Total combinational functions  ; 160                                         ;
+;     Dedicated logic registers      ; 105                                         ;
+; Total registers                    ; 105                                         ;
+; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -163,7 +163,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -184,49 +184,49 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 107                ;
+; Estimated Total logic elements              ; 162                ;
 ;                                             ;                    ;
-; Total combinational functions               ; 105                ;
+; Total combinational functions               ; 160                ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 21                 ;
-;     -- 3 input functions                    ; 5                  ;
-;     -- <=2 input functions                  ; 79                 ;
+;     -- 4 input functions                    ; 41                 ;
+;     -- 3 input functions                    ; 7                  ;
+;     -- <=2 input functions                  ; 112                ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 43                 ;
-;     -- arithmetic mode                      ; 62                 ;
+;     -- normal mode                          ; 67                 ;
+;     -- arithmetic mode                      ; 93                 ;
 ;                                             ;                    ;
-; Total registers                             ; 71                 ;
-;     -- Dedicated logic registers            ; 71                 ;
+; Total registers                             ; 105                ;
+;     -- Dedicated logic registers            ; 105                ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
-; I/O pins                                    ; 15                 ;
+; I/O pins                                    ; 17                 ;
 ;                                             ;                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; system_clock~input ;
 ; Maximum fan-out                             ; 68                 ;
-; Total fan-out                               ; 421                ;
-; Average fan-out                             ; 2.04               ;
+; Total fan-out                               ; 740                ;
+; Average fan-out                             ; 2.47               ;
 +---------------------------------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name       ; Library Name ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------+--------------+
-; |ADS131A0X                                        ; 105 (0)             ; 71 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |ADS131A0X                                                             ; ADS131A0X         ; work         ;
-;    |SPI_Master:comb_3|                            ; 49 (3)              ; 38 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:comb_3                                           ; SPI_Master        ; work         ;
-;       |clock_synthesizer:clock_synthesizer_uut_0| ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer ; work         ;
-;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                   ; clock_synthesizer ; work         ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name       ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
+; |ADS131A0X                                        ; 160 (0)             ; 105 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |ADS131A0X                                                                     ; ADS131A0X         ; work         ;
+;    |SPI_Master:SPI_Master_uut|                    ; 104 (58)            ; 72 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                           ; SPI_Master        ; work         ;
+;       |clock_synthesizer:clock_synthesizer_uut_0| ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer ; work         ;
+;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                           ; clock_synthesizer ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------+
-; State Machine - |ADS131A0X|SPI_Master:comb_3|current_state                                       ;
+; State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state                               ;
 +---------------------------+--------------------+---------------------------+---------------------+
 ; Name                      ; current_state.IDLE ; current_state.TRANSACTION ; current_state.SETUP ;
 +---------------------------+--------------------+---------------------------+---------------------+
@@ -241,7 +241,7 @@ Encoding Type:  One-Hot
 +----------------------------------------+-------------------------------------------------------------------+
 ; Register name                          ; Reason for Removal                                                ;
 +----------------------------------------+-------------------------------------------------------------------+
-; SPI_Master:comb_3|state[2]             ; Stuck at GND due to stuck port data_in                            ;
+; SPI_Master:SPI_Master_uut|state[2]     ; Stuck at GND due to stuck port data_in                            ;
 ; heartbeat:heartbeat_uut|clock_state    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|clock_state ;
 ; heartbeat:heartbeat_uut|counter[24]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[24] ;
 ; heartbeat:heartbeat_uut|counter[22]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[22] ;
@@ -284,12 +284,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 71    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 105   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 35    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -304,13 +304,13 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0 ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                            ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; COUNTER_LIMIT  ; 6     ; Signed Integer                                                                  ;
-+----------------+-------+---------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; COUNTER_LIMIT  ; 6     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -319,22 +319,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 15                          ;
-; cycloneiii_ff         ; 71                          ;
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 105                         ;
 ;     CLR               ; 3                           ;
-;     plain             ; 68                          ;
-; cycloneiii_lcell_comb ; 107                         ;
-;     arith             ; 62                          ;
-;         2 data inputs ; 62                          ;
-;     normal            ; 45                          ;
+;     ENA CLR SCLR      ; 32                          ;
+;     plain             ; 70                          ;
+; cycloneiii_lcell_comb ; 162                         ;
+;     arith             ; 93                          ;
+;         2 data inputs ; 93                          ;
+;     normal            ; 69                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 21                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 41                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.40                        ;
-; Average LUT depth     ; 3.31                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -353,10 +354,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Feb 06 17:16:10 2025
+    Info: Processing started: Fri Feb 07 15:15:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADS131A0X -c ADS131A0X
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file tb_ads131a0x.v
+    Info (12023): Found entity 1: tb_ADS131A0X File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/tb_ADS131A0X.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file clock_synthesis_module.v
     Info (12023): Found entity 1: clock_synthesis_module File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesis_module.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file ads131a0x.v
@@ -367,14 +370,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock_s
     Info (12023): Found entity 1: clock_synthesizer File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
     Info (12023): Found entity 1: SPI_Master File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 4
-Critical Warning (10846): Verilog HDL Instantiation warning at ADS131A0X.v(56): instance has no name File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 56
 Info (12127): Elaborating entity "ADS131A0X" for the top level hierarchy
-Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "clock_synthesizer:clock_synthesizer_uut_1" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 34
-Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 40
-Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:comb_3" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 56
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "clock_synthesizer:clock_synthesizer_uut_1" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 42
+Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:SPI_Master_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 61
 Warning (10034): Output port "SPI_MOSI" at SPI_master.v(12) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 12
 Warning (10034): Output port "SPI_CS" at SPI_master.v(14) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 14
-Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 25
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 27
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led[3]" is stuck at VCC File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 11
     Warning (13410): Pin "SPI_MOSI" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 14
@@ -386,15 +388,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SPI_MISO" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 15
-Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 179 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 107 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Thu Feb 06 17:16:23 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:06
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 162 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4752 megabytes
+    Info: Processing ended: Fri Feb 07 15:15:47 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+

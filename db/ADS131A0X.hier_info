@@ -3,17 +3,19 @@ system_clock => system_clock.IN3
 reset_n => reset_n.IN1
 led[0] <= heartbeat:heartbeat_uut.clock_pol
 led[1] <= clock_synthesizer:clock_synthesizer_uut_1.clock_pol
-led[2] <= SPI_Master:comb_3.SPI_SCLK
+led[2] <= SPI_Master:SPI_Master_uut.SPI_SCLK
 led[3] <= <VCC>
-SPI_MOSI <= SPI_Master:comb_3.SPI_MOSI
+SPI_MOSI <= SPI_Master:SPI_Master_uut.SPI_MOSI
 SPI_MISO => SPI_MISO.IN1
-SPI_CS <= SPI_Master:comb_3.SPI_CS
-SPI_SCLK <= SPI_Master:comb_3.SPI_SCLK
+SPI_CS <= SPI_Master:SPI_Master_uut.SPI_CS
+SPI_SCLK <= SPI_Master:SPI_Master_uut.SPI_SCLK
+SPI_RESET <= SPI_Master:SPI_Master_uut.SPI_RESET
 adc_init => adc_init.IN1
 adc_ready => adc_ready.IN1
-state[0] <= SPI_Master:comb_3.state
-state[1] <= SPI_Master:comb_3.state
-state[2] <= SPI_Master:comb_3.state
+state[0] <= SPI_Master:SPI_Master_uut.state
+state[1] <= SPI_Master:SPI_Master_uut.state
+state[2] <= SPI_Master:SPI_Master_uut.state
+adc_init_completed_z <= SPI_Master:SPI_Master_uut.adc_init_completed_z
 
 
 |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1
@@ -90,13 +92,49 @@ input_clock => counter[31].CLK
 clock_pol <= clock_state.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ADS131A0X|SPI_Master:comb_3
+|ADS131A0X|SPI_Master:SPI_Master_uut
 system_clock => system_clock.IN1
+reset_n => counter[0].ACLR
+reset_n => counter[1].ACLR
+reset_n => counter[2].ACLR
+reset_n => counter[3].ACLR
+reset_n => counter[4].ACLR
+reset_n => counter[5].ACLR
+reset_n => counter[6].ACLR
+reset_n => counter[7].ACLR
+reset_n => counter[8].ACLR
+reset_n => counter[9].ACLR
+reset_n => counter[10].ACLR
+reset_n => counter[11].ACLR
+reset_n => counter[12].ACLR
+reset_n => counter[13].ACLR
+reset_n => counter[14].ACLR
+reset_n => counter[15].ACLR
+reset_n => counter[16].ACLR
+reset_n => counter[17].ACLR
+reset_n => counter[18].ACLR
+reset_n => counter[19].ACLR
+reset_n => counter[20].ACLR
+reset_n => counter[21].ACLR
+reset_n => counter[22].ACLR
+reset_n => counter[23].ACLR
+reset_n => counter[24].ACLR
+reset_n => counter[25].ACLR
+reset_n => counter[26].ACLR
+reset_n => counter[27].ACLR
+reset_n => counter[28].ACLR
+reset_n => counter[29].ACLR
+reset_n => counter[30].ACLR
+reset_n => counter[31].ACLR
 reset_n => current_state~3.DATAIN
-adc_init => next_state.SETUP.DATAB
-adc_init => Selector0.IN1
+reset_n => adc_init_completed.ENA
+reset_n => SPI_RESET~reg0.ENA
+adc_init => next_state.DATAB
+adc_init => next_state.DATAB
+adc_ready => next_state.DATAA
 adc_ready => Selector0.IN2
-adc_ready => Selector1.IN2
+adc_ready => next_state.DATAA
+adc_ready => Selector2.IN0
 state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -104,9 +142,11 @@ SPI_MOSI <= <GND>
 SPI_MISO => ~NO_FANOUT~
 SPI_CS <= <GND>
 SPI_SCLK <= clock_synthesizer:clock_synthesizer_uut_0.clock_pol
+SPI_RESET <= SPI_RESET~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adc_init_completed_z <= adc_init_completed.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ADS131A0X|SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0
+|ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0
 input_clock => clock_state.CLK
 input_clock => counter[0].CLK
 input_clock => counter[1].CLK
