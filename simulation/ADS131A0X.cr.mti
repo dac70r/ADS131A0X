@@ -1,9 +1,9 @@
-C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v {1 {vlog -work work -stats=none C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v
+C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v {1 {vlog -work work -stats=none C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module SPI_Master
+-- Compiling module ADS131A0X
 
 Top level modules:
-	SPI_Master
+	ADS131A0X
 
 } {} {}} C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/tb_ADS131A0X.v {1 {vlog -work work -stats=none C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/tb_ADS131A0X.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

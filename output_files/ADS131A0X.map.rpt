@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADS131A0X
-Fri Feb 07 15:15:47 2025
+Fri Feb 07 16:58:51 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,14 +14,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: clock_synthesizer:clock_synthesizer_uut_1
- 12. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: clock_synthesizer:clock_synthesizer_uut_1
+ 14. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0
+ 15. Port Connectivity Checks: "SPI_Master:SPI_Master_uut"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,15 +50,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 07 15:15:47 2025       ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 07 16:58:51 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ADS131A0X                                   ;
 ; Top-level Entity Name              ; ADS131A0X                                   ;
 ; Family                             ; Cyclone 10 LP                               ;
-; Total logic elements               ; 162                                         ;
-;     Total combinational functions  ; 160                                         ;
-;     Dedicated logic registers      ; 105                                         ;
-; Total registers                    ; 105                                         ;
+; Total logic elements               ; 210                                         ;
+;     Total combinational functions  ; 210                                         ;
+;     Dedicated logic registers      ; 139                                         ;
+; Total registers                    ; 139                                         ;
 ; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -167,16 +170,17 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
-; ADS131A0X.v                      ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v         ;         ;
-; heartbeat.v                      ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/heartbeat.v         ;         ;
-; clock_synthesizer.v              ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v ;         ;
-; SPI_master.v                     ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v        ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; ADS131A0X.v                      ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v          ;         ;
+; heartbeat.v                      ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/heartbeat.v          ;         ;
+; clock_synthesizer.v              ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v  ;         ;
+; SPI_master.v                     ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v         ;         ;
+; spi_sclk_generator.v             ; yes             ; User Verilog HDL File  ; C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------+
@@ -184,20 +188,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 162                ;
+; Estimated Total logic elements              ; 210                ;
 ;                                             ;                    ;
-; Total combinational functions               ; 160                ;
+; Total combinational functions               ; 210                ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 41                 ;
-;     -- 3 input functions                    ; 7                  ;
-;     -- <=2 input functions                  ; 112                ;
+;     -- 4 input functions                    ; 52                 ;
+;     -- 3 input functions                    ; 10                 ;
+;     -- <=2 input functions                  ; 148                ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 67                 ;
-;     -- arithmetic mode                      ; 93                 ;
+;     -- normal mode                          ; 86                 ;
+;     -- arithmetic mode                      ; 124                ;
 ;                                             ;                    ;
-; Total registers                             ; 105                ;
-;     -- Dedicated logic registers            ; 105                ;
+; Total registers                             ; 139                ;
+;     -- Dedicated logic registers            ; 139                ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 17                 ;
@@ -205,78 +209,93 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; system_clock~input ;
-; Maximum fan-out                             ; 68                 ;
-; Total fan-out                               ; 740                ;
-; Average fan-out                             ; 2.47               ;
+; Maximum fan-out                             ; 101                ;
+; Total fan-out                               ; 966                ;
+; Average fan-out                             ; 2.52               ;
 +---------------------------------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name       ; Library Name ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; |ADS131A0X                                        ; 160 (0)             ; 105 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |ADS131A0X                                                                     ; ADS131A0X         ; work         ;
-;    |SPI_Master:SPI_Master_uut|                    ; 104 (58)            ; 72 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                           ; SPI_Master        ; work         ;
-;       |clock_synthesizer:clock_synthesizer_uut_0| ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer ; work         ;
-;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                           ; clock_synthesizer ; work         ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+-------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name        ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; |ADS131A0X                                        ; 210 (0)             ; 139 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |ADS131A0X                                                                     ; ADS131A0X          ; work         ;
+;    |SPI_Master:SPI_Master_uut|                    ; 110 (64)            ; 73 (40)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                           ; SPI_Master         ; work         ;
+;       |clock_synthesizer:clock_synthesizer_uut_0| ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer  ; work         ;
+;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                           ; clock_synthesizer  ; work         ;
+;    |spi_sclk_generator:spi_sclk_generator_uut|    ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|spi_sclk_generator:spi_sclk_generator_uut                           ; spi_sclk_generator ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------+
-; State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state                               ;
-+---------------------------+--------------------+---------------------------+---------------------+
-; Name                      ; current_state.IDLE ; current_state.TRANSACTION ; current_state.SETUP ;
-+---------------------------+--------------------+---------------------------+---------------------+
-; current_state.IDLE        ; 0                  ; 0                         ; 0                   ;
-; current_state.SETUP       ; 1                  ; 0                         ; 1                   ;
-; current_state.TRANSACTION ; 1                  ; 1                         ; 0                   ;
-+---------------------------+--------------------+---------------------------+---------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state                                                                           ;
++---------------------------------+-------------------------------+---------------------------------+---------------------+--------------------+
+; Name                            ; current_state.TRANSACTION_end ; current_state.TRANSACTION_begin ; current_state.SETUP ; current_state.IDLE ;
++---------------------------------+-------------------------------+---------------------------------+---------------------+--------------------+
+; current_state.IDLE              ; 0                             ; 0                               ; 0                   ; 0                  ;
+; current_state.SETUP             ; 0                             ; 0                               ; 1                   ; 1                  ;
+; current_state.TRANSACTION_begin ; 0                             ; 1                               ; 0                   ; 1                  ;
+; current_state.TRANSACTION_end   ; 1                             ; 0                               ; 0                   ; 1                  ;
++---------------------------------+-------------------------------+---------------------------------+---------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                         ;
-+----------------------------------------+-------------------------------------------------------------------+
-; Register name                          ; Reason for Removal                                                ;
-+----------------------------------------+-------------------------------------------------------------------+
-; SPI_Master:SPI_Master_uut|state[2]     ; Stuck at GND due to stuck port data_in                            ;
-; heartbeat:heartbeat_uut|clock_state    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|clock_state ;
-; heartbeat:heartbeat_uut|counter[24]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[24] ;
-; heartbeat:heartbeat_uut|counter[22]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[22] ;
-; heartbeat:heartbeat_uut|counter[21]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[21] ;
-; heartbeat:heartbeat_uut|counter[20]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[20] ;
-; heartbeat:heartbeat_uut|counter[19]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[19] ;
-; heartbeat:heartbeat_uut|counter[18]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[18] ;
-; heartbeat:heartbeat_uut|counter[16]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[16] ;
-; heartbeat:heartbeat_uut|counter[14]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[14] ;
-; heartbeat:heartbeat_uut|counter[13]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[13] ;
-; heartbeat:heartbeat_uut|counter[12]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[12] ;
-; heartbeat:heartbeat_uut|counter[11]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[11] ;
-; heartbeat:heartbeat_uut|counter[5]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[5]  ;
-; heartbeat:heartbeat_uut|counter[4]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[4]  ;
-; heartbeat:heartbeat_uut|counter[3]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[3]  ;
-; heartbeat:heartbeat_uut|counter[2]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[2]  ;
-; heartbeat:heartbeat_uut|counter[1]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[1]  ;
-; heartbeat:heartbeat_uut|counter[0]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[0]  ;
-; heartbeat:heartbeat_uut|counter[31]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[31] ;
-; heartbeat:heartbeat_uut|counter[30]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[30] ;
-; heartbeat:heartbeat_uut|counter[29]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[29] ;
-; heartbeat:heartbeat_uut|counter[28]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[28] ;
-; heartbeat:heartbeat_uut|counter[27]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[27] ;
-; heartbeat:heartbeat_uut|counter[26]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[26] ;
-; heartbeat:heartbeat_uut|counter[25]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[25] ;
-; heartbeat:heartbeat_uut|counter[23]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[23] ;
-; heartbeat:heartbeat_uut|counter[17]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[17] ;
-; heartbeat:heartbeat_uut|counter[15]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[15] ;
-; heartbeat:heartbeat_uut|counter[10]    ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[10] ;
-; heartbeat:heartbeat_uut|counter[9]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[9]  ;
-; heartbeat:heartbeat_uut|counter[8]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[8]  ;
-; heartbeat:heartbeat_uut|counter[7]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[7]  ;
-; heartbeat:heartbeat_uut|counter[6]     ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[6]  ;
-; Total Number of Removed Registers = 34 ;                                                                   ;
-+----------------------------------------+-------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal              ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------+------------------------+
+; SPI_Master:SPI_Master_uut|SPI_CS                   ; SPI_Master:SPI_Master_uut|SPI_CS ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                                  ;                        ;
++----------------------------------------------------+----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++-------------------------------------------+-------------------------------------------------------------------+
+; Register name                             ; Reason for Removal                                                ;
++-------------------------------------------+-------------------------------------------------------------------+
+; SPI_Master:SPI_Master_uut|state[2]        ; Stuck at GND due to stuck port data_in                            ;
+; heartbeat:heartbeat_uut|clock_state       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|clock_state ;
+; heartbeat:heartbeat_uut|counter[24]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[24] ;
+; heartbeat:heartbeat_uut|counter[22]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[22] ;
+; heartbeat:heartbeat_uut|counter[21]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[21] ;
+; heartbeat:heartbeat_uut|counter[20]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[20] ;
+; heartbeat:heartbeat_uut|counter[19]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[19] ;
+; heartbeat:heartbeat_uut|counter[18]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[18] ;
+; heartbeat:heartbeat_uut|counter[16]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[16] ;
+; heartbeat:heartbeat_uut|counter[14]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[14] ;
+; heartbeat:heartbeat_uut|counter[13]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[13] ;
+; heartbeat:heartbeat_uut|counter[12]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[12] ;
+; heartbeat:heartbeat_uut|counter[11]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[11] ;
+; heartbeat:heartbeat_uut|counter[5]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[5]  ;
+; heartbeat:heartbeat_uut|counter[4]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[4]  ;
+; heartbeat:heartbeat_uut|counter[3]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[3]  ;
+; heartbeat:heartbeat_uut|counter[2]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[2]  ;
+; heartbeat:heartbeat_uut|counter[1]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[1]  ;
+; heartbeat:heartbeat_uut|counter[0]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[0]  ;
+; heartbeat:heartbeat_uut|counter[31]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[31] ;
+; heartbeat:heartbeat_uut|counter[30]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[30] ;
+; heartbeat:heartbeat_uut|counter[29]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[29] ;
+; heartbeat:heartbeat_uut|counter[28]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[28] ;
+; heartbeat:heartbeat_uut|counter[27]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[27] ;
+; heartbeat:heartbeat_uut|counter[26]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[26] ;
+; heartbeat:heartbeat_uut|counter[25]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[25] ;
+; heartbeat:heartbeat_uut|counter[23]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[23] ;
+; heartbeat:heartbeat_uut|counter[17]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[17] ;
+; heartbeat:heartbeat_uut|counter[15]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[15] ;
+; heartbeat:heartbeat_uut|counter[10]       ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[10] ;
+; heartbeat:heartbeat_uut|counter[9]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[9]  ;
+; heartbeat:heartbeat_uut|counter[8]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[8]  ;
+; heartbeat:heartbeat_uut|counter[7]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[7]  ;
+; heartbeat:heartbeat_uut|counter[6]        ; Merged with clock_synthesizer:clock_synthesizer_uut_1|counter[6]  ;
+; SPI_Master:SPI_Master_uut|current_state~4 ; Lost fanout                                                       ;
+; SPI_Master:SPI_Master_uut|current_state~5 ; Lost fanout                                                       ;
+; Total Number of Removed Registers = 36    ;                                                                   ;
++-------------------------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -284,14 +303,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 105   ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 139   ;
+; Number of registers using Synchronous Clear  ; 64    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 35    ;
+; Number of registers using Asynchronous Clear ; 36    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ADS131A0X|spi_sclk_generator:spi_sclk_generator_uut|counter[27] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------+
@@ -314,28 +342,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SPI_Master:SPI_Master_uut"                                                                                                    ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port                      ; Type   ; Severity ; Details                                                                                                  ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; adc_transaction_completed ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 17                          ;
-; cycloneiii_ff         ; 105                         ;
-;     CLR               ; 3                           ;
+; cycloneiii_ff         ; 139                         ;
+;     CLR               ; 4                           ;
 ;     ENA CLR SCLR      ; 32                          ;
-;     plain             ; 70                          ;
-; cycloneiii_lcell_comb ; 162                         ;
-;     arith             ; 93                          ;
-;         2 data inputs ; 93                          ;
-;     normal            ; 69                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 41                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 71                          ;
+; cycloneiii_lcell_comb ; 211                         ;
+;     arith             ; 124                         ;
+;         2 data inputs ; 124                         ;
+;     normal            ; 87                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 52                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.52                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -354,7 +392,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Feb 07 15:15:35 2025
+    Info: Processing started: Fri Feb 07 16:58:37 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADS131A0X -c ADS131A0X
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -370,33 +408,38 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock_s
     Info (12023): Found entity 1: clock_synthesizer File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
     Info (12023): Found entity 1: SPI_Master File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file spi_sclk_generator.v
+    Info (12023): Found entity 1: spi_sclk_generator File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 4
 Info (12127): Elaborating entity "ADS131A0X" for the top level hierarchy
 Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "clock_synthesizer:clock_synthesizer_uut_1" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 42
-Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:SPI_Master_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 61
-Warning (10034): Output port "SPI_MOSI" at SPI_master.v(12) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 12
-Warning (10034): Output port "SPI_CS" at SPI_master.v(14) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 14
-Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 27
+Info (12128): Elaborating entity "spi_sclk_generator" for hierarchy "spi_sclk_generator:spi_sclk_generator_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 43
+Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 49
+Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:SPI_Master_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 68
+Warning (10240): Verilog HDL Always Construct warning at SPI_master.v(64): inferring latch(es) for variable "SPI_CS", which holds its previous value in one or more paths through the always construct File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 64
+Warning (10034): Output port "SPI_MOSI" at SPI_master.v(9) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 9
+Warning (10034): Output port "adc_transaction_completed" at SPI_master.v(21) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 21
+Info (10041): Inferred latch for "SPI_CS" at SPI_master.v(64) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 64
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 30
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led[3]" is stuck at VCC File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 11
     Warning (13410): Pin "SPI_MOSI" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 14
-    Warning (13410): Pin "SPI_CS" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 16
     Warning (13410): Pin "state[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/output_files/ADS131A0X.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SPI_MISO" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 15
-Info (21057): Implemented 179 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 227 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 162 logic cells
+    Info (21061): Implemented 210 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Fri Feb 07 15:15:47 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4754 megabytes
+    Info: Processing ended: Fri Feb 07 16:58:51 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

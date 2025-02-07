@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CS",
+					"strict" : false
+				},
+				{
 					"name" : "SPI_SCLK",
 					"strict" : false
 				},
@@ -44,11 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "adc_init",
+					"name" : "adc_ready",
 					"strict" : false
 				},
 				{
-					"name" : "adc_ready",
+					"name" : "adc_init",
 					"strict" : false
 				}
 			]

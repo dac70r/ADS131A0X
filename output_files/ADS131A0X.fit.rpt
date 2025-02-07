@@ -1,5 +1,5 @@
 Fitter report for ADS131A0X
-Fri Feb 07 15:15:56 2025
+Fri Feb 07 16:59:00 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -67,17 +67,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Feb 07 15:15:56 2025       ;
+; Fitter Status                      ; Successful - Fri Feb 07 16:59:00 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ADS131A0X                                   ;
 ; Top-level Entity Name              ; ADS131A0X                                   ;
 ; Family                             ; Cyclone 10 LP                               ;
 ; Device                             ; 10CL025YU256I7G                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 164 / 24,624 ( < 1 % )                      ;
-;     Total combinational functions  ; 160 / 24,624 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 105 / 24,624 ( < 1 % )                      ;
-; Total registers                    ; 105                                         ;
+; Total logic elements               ; 214 / 24,624 ( < 1 % )                      ;
+;     Total combinational functions  ; 210 / 24,624 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 139 / 24,624 ( < 1 % )                      ;
+; Total registers                    ; 139                                         ;
 ; Total pins                         ; 18 / 151 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -159,7 +159,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   1.5%      ;
+;     Processors 2-4         ;   1.7%      ;
 +----------------------------+-------------+
 
 
@@ -169,8 +169,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 314 ) ; 0.00 % ( 0 / 314 )         ; 0.00 % ( 0 / 314 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 314 ) ; 0.00 % ( 0 / 314 )         ; 0.00 % ( 0 / 314 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 398 ) ; 0.00 % ( 0 / 398 )         ; 0.00 % ( 0 / 398 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 398 ) ; 0.00 % ( 0 / 398 )         ; 0.00 % ( 0 / 398 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -193,7 +193,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 304 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 388 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -209,26 +209,26 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 164 / 24,624 ( < 1 % ) ;
-;     -- Combinational with no register       ; 59                     ;
+; Total logic elements                        ; 214 / 24,624 ( < 1 % ) ;
+;     -- Combinational with no register       ; 75                     ;
 ;     -- Register only                        ; 4                      ;
-;     -- Combinational with a register        ; 101                    ;
+;     -- Combinational with a register        ; 135                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 41                     ;
-;     -- 3 input functions                    ; 7                      ;
-;     -- <=2 input functions                  ; 112                    ;
+;     -- 4 input functions                    ; 52                     ;
+;     -- 3 input functions                    ; 10                     ;
+;     -- <=2 input functions                  ; 148                    ;
 ;     -- Register only                        ; 4                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 67                     ;
-;     -- arithmetic mode                      ; 93                     ;
+;     -- normal mode                          ; 86                     ;
+;     -- arithmetic mode                      ; 124                    ;
 ;                                             ;                        ;
-; Total registers*                            ; 105 / 25,304 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 105 / 24,624 ( < 1 % ) ;
+; Total registers*                            ; 139 / 25,304 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 139 / 24,624 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 680 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 13 / 1,539 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 18 / 1,539 ( 1 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 18 / 151 ( 12 % )      ;
 ;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
@@ -246,12 +246,12 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
-; Peak interconnect usage (total/H/V)         ; 1.0% / 0.9% / 1.1%     ;
-; Maximum fan-out                             ; 68                     ;
+; Average interconnect usage (total/H/V)      ; 0.2% / 0.2% / 0.2%     ;
+; Peak interconnect usage (total/H/V)         ; 1.6% / 1.5% / 1.8%     ;
+; Maximum fan-out                             ; 101                    ;
 ; Highest non-global fan-out                  ; 34                     ;
-; Total fan-out                               ; 752                    ;
-; Average fan-out                             ; 2.38                   ;
+; Total fan-out                               ; 979                    ;
+; Average fan-out                             ; 2.44                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -264,26 +264,26 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 164 / 24624 ( < 1 % ) ; 0 / 24624 ( 0 % )              ;
-;     -- Combinational with no register       ; 59                    ; 0                              ;
+; Total logic elements                        ; 214 / 24624 ( < 1 % ) ; 0 / 24624 ( 0 % )              ;
+;     -- Combinational with no register       ; 75                    ; 0                              ;
 ;     -- Register only                        ; 4                     ; 0                              ;
-;     -- Combinational with a register        ; 101                   ; 0                              ;
+;     -- Combinational with a register        ; 135                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 41                    ; 0                              ;
-;     -- 3 input functions                    ; 7                     ; 0                              ;
-;     -- <=2 input functions                  ; 112                   ; 0                              ;
+;     -- 4 input functions                    ; 52                    ; 0                              ;
+;     -- 3 input functions                    ; 10                    ; 0                              ;
+;     -- <=2 input functions                  ; 148                   ; 0                              ;
 ;     -- Register only                        ; 4                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 67                    ; 0                              ;
-;     -- arithmetic mode                      ; 93                    ; 0                              ;
+;     -- normal mode                          ; 86                    ; 0                              ;
+;     -- arithmetic mode                      ; 124                   ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 105                   ; 0                              ;
-;     -- Dedicated logic registers            ; 105 / 24624 ( < 1 % ) ; 0 / 24624 ( 0 % )              ;
+; Total registers                             ; 139                   ; 0                              ;
+;     -- Dedicated logic registers            ; 139 / 24624 ( < 1 % ) ; 0 / 24624 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 13 / 1539 ( < 1 % )   ; 0 / 1539 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 18 / 1539 ( 1 % )     ; 0 / 1539 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 18                    ; 0                              ;
@@ -299,8 +299,8 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 747                   ; 5                              ;
-;     -- Registered Connections               ; 239                   ; 0                              ;
+;     -- Total Connections                    ; 974                   ; 5                              ;
+;     -- Registered Connections               ; 312                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -332,11 +332,11 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 +-----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name            ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; SPI_MISO        ; T2    ; 3        ; 3            ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; adc_init        ; C9    ; 7        ; 31           ; 34           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; adc_ready       ; D9    ; 7        ; 31           ; 34           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; reset_n         ; E15   ; 6        ; 53           ; 17           ; 0            ; 36                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; system_clock    ; E2    ; 1        ; 0            ; 16           ; 0            ; 68                    ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; LVDS         ; --                        ; User                 ; no        ;
+; SPI_MISO        ; B7    ; 8        ; 18           ; 34           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; adc_init        ; B11   ; 7        ; 40           ; 34           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; adc_ready       ; A11   ; 7        ; 40           ; 34           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; reset_n         ; E15   ; 6        ; 53           ; 17           ; 0            ; 37                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; system_clock    ; E2    ; 1        ; 0            ; 16           ; 0            ; 101                   ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; LVDS         ; --                        ; User                 ; no        ;
 ; system_clock(n) ; E1    ; 1        ; 0            ; 16           ; 7            ; 0                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; LVDS         ; --                        ; User                 ; no        ;
 +-----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -346,18 +346,18 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 +----------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name                 ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +----------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; SPI_CS               ; D6    ; 8        ; 9            ; 34           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; SPI_MOSI             ; N5    ; 3        ; 5            ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; SPI_RESET            ; D8    ; 8        ; 23           ; 34           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; SPI_SCLK             ; F9    ; 7        ; 34           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; adc_init_completed_z ; A7    ; 8        ; 20           ; 34           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; SPI_CS               ; B10   ; 7        ; 34           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; SPI_MOSI             ; A6    ; 8        ; 16           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; SPI_RESET            ; B12   ; 7        ; 43           ; 34           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; SPI_SCLK             ; D15   ; 6        ; 53           ; 26           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; adc_init_completed_z ; C11   ; 7        ; 38           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; led[0]               ; L14   ; 5        ; 53           ; 9            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; led[1]               ; K15   ; 5        ; 53           ; 13           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; led[2]               ; J14   ; 5        ; 53           ; 15           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; led[3]               ; J13   ; 5        ; 53           ; 16           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; state[0]             ; C8    ; 8        ; 23           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; state[1]             ; E9    ; 7        ; 29           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; state[2]             ; D1    ; 1        ; 0            ; 25           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state[0]             ; A10   ; 7        ; 34           ; 34           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state[1]             ; A15   ; 7        ; 38           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state[2]             ; M6    ; 3        ; 7            ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 +----------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -379,6 +379,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; G12      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; G12      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; F16      ; DIFFIO_R4n, nCEO            ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
+; B7       ; DIFFIO_T9p, DATA4           ; Use as regular IO        ; SPI_MISO                ; Dual Purpose Pin          ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 
 
@@ -387,14 +388,14 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 +----------+-----------------+---------------+--------------+
 ; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
 +----------+-----------------+---------------+--------------+
-; 1        ; 7 / 12 ( 58 % ) ; 2.5V          ; --           ;
+; 1        ; 6 / 12 ( 50 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ;
-; 3        ; 2 / 25 ( 8 % )  ; 2.5V          ; --           ;
+; 3        ; 1 / 25 ( 4 % )  ; 2.5V          ; --           ;
 ; 4        ; 0 / 20 ( 0 % )  ; 2.5V          ; --           ;
 ; 5        ; 4 / 18 ( 22 % ) ; 2.5V          ; --           ;
-; 6        ; 2 / 13 ( 15 % ) ; 2.5V          ; --           ;
-; 7        ; 4 / 24 ( 17 % ) ; 2.5V          ; --           ;
-; 8        ; 4 / 23 ( 17 % ) ; 2.5V          ; --           ;
+; 6        ; 3 / 13 ( 23 % ) ; 2.5V          ; --           ;
+; 7        ; 7 / 24 ( 29 % ) ; 2.5V          ; --           ;
+; 8        ; 2 / 23 ( 9 % )  ; 2.5V          ; --           ;
 +----------+-----------------+---------------+--------------+
 
 
@@ -408,16 +409,16 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; A3       ; 239        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A4       ; 236        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A5       ; 232        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A6       ; 225        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A7       ; 220        ; 8        ; adc_init_completed_z                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A6       ; 225        ; 8        ; SPI_MOSI                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A7       ; 220        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A8       ; 211        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; A9       ; 209        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A10      ; 198        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A11      ; 188        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A10      ; 198        ; 7        ; state[0]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A11      ; 188        ; 7        ; adc_ready                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A12      ; 186        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A13      ; 179        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A14      ; 181        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A15      ; 191        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A15      ; 191        ; 7        ; state[1]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A16      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; B1       ; 5          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; B2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -425,12 +426,12 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; B4       ; 237        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B5       ; 233        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B6       ; 226        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B7       ; 221        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; B7       ; 221        ; 8        ; SPI_MISO                                                  ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B8       ; 212        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B9       ; 210        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B10      ; 199        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B11      ; 189        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B12      ; 187        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; B10      ; 199        ; 7        ; SPI_CS                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B11      ; 189        ; 7        ; adc_init                                                  ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 187        ; 7        ; SPI_RESET                                                 ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B13      ; 180        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B14      ; 182        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B15      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -442,30 +443,30 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; C5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C6       ; 224        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; C7       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; C8       ; 215        ; 8        ; state[0]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; C9       ; 200        ; 7        ; adc_init                                                  ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C8       ; 215        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C9       ; 200        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C10      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; C11      ; 190        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; C11      ; 190        ; 7        ; adc_init_completed_z                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C12      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C13      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; C14      ; 175        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C15      ; 174        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C16      ; 173        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; D1       ; 10         ; 1        ; state[2]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D1       ; 10         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D2       ; 9          ; 1        ; ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
 ; D3       ; 246        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D4       ;            ;          ; VCCD_PLL3                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; D5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; D6       ; 234        ; 8        ; SPI_CS                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D6       ; 234        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; D8       ; 216        ; 8        ; SPI_RESET                                                 ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; D9       ; 201        ; 7        ; adc_ready                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D8       ; 216        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; D9       ; 201        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D11      ; 177        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D12      ; 178        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D13      ;            ;          ; VCCD_PLL2                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; D14      ; 176        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D15      ; 170        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; D15      ; 170        ; 6        ; SPI_SCLK                                                  ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; D16      ; 169        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E1       ; 26         ; 1        ; system_clock(n)                                           ; input  ; LVDS         ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; E2       ; 25         ; 1        ; system_clock                                              ; input  ; LVDS         ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -475,7 +476,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; E6       ; 231        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E7       ; 227        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E8       ; 218        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; E9       ; 205        ; 7        ; state[1]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E9       ; 205        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E10      ; 184        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E11      ; 183        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E12      ;            ;          ; GNDA2                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -491,7 +492,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; F6       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F7       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; F8       ; 219        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; F9       ; 197        ; 7        ; SPI_SCLK                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; F9       ; 197        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F11      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; F12      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -585,7 +586,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; M3       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; M4       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M5       ;            ;          ; GNDA1                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M6       ; 64         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; M6       ; 64         ; 3        ; state[2]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M7       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M8       ; 81         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; M9       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -600,7 +601,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; N2       ; 43         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N3       ; 52         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N4       ;            ;          ; VCCD_PLL1                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; N5       ; 62         ; 3        ; SPI_MOSI                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N5       ; 62         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N6       ; 63         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N8       ; 82         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -645,7 +646,7 @@ The pin-out file can be found in C:/Users/guan-ming.dennis-won/Documents/Code/AD
 ; R15      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R16      ; 129        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T1       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; T2       ; 59         ; 3        ; SPI_MISO                                                  ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; T2       ; 59         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T3       ; 55         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T4       ; 61         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T5       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -683,8 +684,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; state[2]             ; Incomplete set of assignments ;
 ; adc_init_completed_z ; Incomplete set of assignments ;
 ; reset_n              ; Incomplete set of assignments ;
-; adc_init             ; Incomplete set of assignments ;
 ; adc_ready            ; Incomplete set of assignments ;
+; adc_init             ; Incomplete set of assignments ;
 ; SPI_MOSI             ; Missing location assignment   ;
 ; SPI_MISO             ; Missing location assignment   ;
 ; SPI_CS               ; Missing location assignment   ;
@@ -694,21 +695,22 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; state[1]             ; Missing location assignment   ;
 ; state[2]             ; Missing location assignment   ;
 ; adc_init_completed_z ; Missing location assignment   ;
-; adc_init             ; Missing location assignment   ;
 ; adc_ready            ; Missing location assignment   ;
+; adc_init             ; Missing location assignment   ;
 +----------------------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                 ;
-+---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                            ; Entity Name       ; Library Name ;
-+---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+-------------------+--------------+
-; |ADS131A0X                                        ; 164 (0)     ; 105 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 18   ; 0            ; 59 (0)       ; 4 (0)             ; 101 (0)          ; |ADS131A0X                                                                     ; ADS131A0X         ; work         ;
-;    |SPI_Master:SPI_Master_uut|                    ; 108 (61)    ; 72 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (22)      ; 4 (3)             ; 68 (36)          ; |ADS131A0X|SPI_Master:SPI_Master_uut                                           ; SPI_Master        ; work         ;
-;       |clock_synthesizer:clock_synthesizer_uut_0| ; 47 (47)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 1 (1)             ; 32 (32)          ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer ; work         ;
-;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 33 (33)          ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                           ; clock_synthesizer ; work         ;
-+---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+-------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                  ;
++---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                            ; Entity Name        ; Library Name ;
++---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; |ADS131A0X                                        ; 214 (0)     ; 139 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 18   ; 0            ; 75 (0)       ; 4 (0)             ; 135 (0)          ; |ADS131A0X                                                                     ; ADS131A0X          ; work         ;
+;    |SPI_Master:SPI_Master_uut|                    ; 114 (67)    ; 73 (40)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (27)      ; 4 (3)             ; 69 (37)          ; |ADS131A0X|SPI_Master:SPI_Master_uut                                           ; SPI_Master         ; work         ;
+;       |clock_synthesizer:clock_synthesizer_uut_0| ; 47 (47)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 1 (1)             ; 32 (32)          ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0 ; clock_synthesizer  ; work         ;
+;    |clock_synthesizer:clock_synthesizer_uut_1|    ; 56 (56)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 33 (33)          ; |ADS131A0X|clock_synthesizer:clock_synthesizer_uut_1                           ; clock_synthesizer  ; work         ;
+;    |spi_sclk_generator:spi_sclk_generator_uut|    ; 44 (44)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 33 (33)          ; |ADS131A0X|spi_sclk_generator:spi_sclk_generator_uut                           ; spi_sclk_generator ; work         ;
++---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -732,29 +734,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; adc_init_completed_z ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; system_clock         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; reset_n              ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; adc_init             ; Input    ; (6) 1211 ps   ; --            ; --                    ; --  ; --   ;
 ; adc_ready            ; Input    ; (6) 1211 ps   ; --            ; --                    ; --  ; --   ;
+; adc_init             ; Input    ; --            ; (6) 1211 ps   ; --                    ; --  ; --   ;
 ; system_clock(n)      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +----------------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+----------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                             ;
-+----------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                          ; Pad To Core Index ; Setting ;
-+----------------------------------------------+-------------------+---------+
-; SPI_MISO                                     ;                   ;         ;
-; system_clock                                 ;                   ;         ;
-; reset_n                                      ;                   ;         ;
-; adc_init                                     ;                   ;         ;
-;      - SPI_Master:SPI_Master_uut|Selector1~1 ; 0                 ; 6       ;
-;      - SPI_Master:SPI_Master_uut|Selector0~0 ; 0                 ; 6       ;
-; adc_ready                                    ;                   ;         ;
-;      - SPI_Master:SPI_Master_uut|Selector2~0 ; 0                 ; 6       ;
-;      - SPI_Master:SPI_Master_uut|Selector0~0 ; 0                 ; 6       ;
-;      - SPI_Master:SPI_Master_uut|Selector0~1 ; 0                 ; 6       ;
-; system_clock(n)                              ;                   ;         ;
-+----------------------------------------------+-------------------+---------+
++---------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                              ;
++---------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                           ; Pad To Core Index ; Setting ;
++---------------------------------------------------------------+-------------------+---------+
+; SPI_MISO                                                      ;                   ;         ;
+; system_clock                                                  ;                   ;         ;
+; reset_n                                                       ;                   ;         ;
+; adc_ready                                                     ;                   ;         ;
+;      - SPI_Master:SPI_Master_uut|next_state.TRANSACTION_end~0 ; 0                 ; 6       ;
+;      - SPI_Master:SPI_Master_uut|Selector0~0                  ; 0                 ; 6       ;
+;      - SPI_Master:SPI_Master_uut|Selector2~0                  ; 0                 ; 6       ;
+;      - SPI_Master:SPI_Master_uut|Selector2~1                  ; 0                 ; 6       ;
+; adc_init                                                      ;                   ;         ;
+;      - SPI_Master:SPI_Master_uut|Selector1~0                  ; 1                 ; 6       ;
+;      - SPI_Master:SPI_Master_uut|Selector0~0                  ; 1                 ; 6       ;
+; system_clock(n)                                               ;                   ;         ;
++---------------------------------------------------------------+-------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -762,11 +765,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                            ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; SPI_Master:SPI_Master_uut|LessThan1~10                                          ; LCCOMB_X25_Y29_N0  ; 34      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; SPI_Master:SPI_Master_uut|Selector1~0                                           ; LCCOMB_X26_Y29_N20 ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; FF_X28_Y30_N9      ; 37      ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; reset_n                                                                         ; PIN_E15            ; 35      ; Async. clear ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; system_clock                                                                    ; PIN_E2             ; 68      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; SPI_Master:SPI_Master_uut|LessThan1~10                                          ; LCCOMB_X45_Y29_N22 ; 34      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; SPI_Master:SPI_Master_uut|SPI_CS~0                                              ; LCCOMB_X36_Y26_N30 ; 2       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; SPI_Master:SPI_Master_uut|Selector1~1                                           ; LCCOMB_X40_Y29_N28 ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; FF_X36_Y24_N9      ; 5       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; FF_X36_Y24_N9      ; 37      ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; reset_n                                                                         ; PIN_E15            ; 36      ; Async. clear ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[27]~34                        ; LCCOMB_X36_Y26_N28 ; 32      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; system_clock                                                                    ; PIN_E2             ; 101     ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 +---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -775,9 +781,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                            ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; FF_X28_Y30_N9 ; 37      ; 10                                   ; Global Clock         ; GCLK10           ; --                        ;
-; reset_n                                                                         ; PIN_E15       ; 35      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; system_clock                                                                    ; PIN_E2        ; 68      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; FF_X36_Y24_N9 ; 37      ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
+; reset_n                                                                         ; PIN_E15       ; 36      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; system_clock                                                                    ; PIN_E2        ; 101     ; 2                                    ; Global Clock         ; GCLK4            ; --                        ;
 +---------------------------------------------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -786,50 +792,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 159 / 71,559 ( < 1 % ) ;
-; C16 interconnects     ; 2 / 2,597 ( < 1 % )    ;
-; C4 interconnects      ; 45 / 46,848 ( < 1 % )  ;
-; Direct links          ; 92 / 71,559 ( < 1 % )  ;
+; Block interconnects   ; 209 / 71,559 ( < 1 % ) ;
+; C16 interconnects     ; 7 / 2,597 ( < 1 % )    ;
+; C4 interconnects      ; 92 / 46,848 ( < 1 % )  ;
+; Direct links          ; 97 / 71,559 ( < 1 % )  ;
 ; Global clocks         ; 3 / 20 ( 15 % )        ;
-; Local interconnects   ; 135 / 24,624 ( < 1 % ) ;
-; R24 interconnects     ; 3 / 2,496 ( < 1 % )    ;
-; R4 interconnects      ; 52 / 62,424 ( < 1 % )  ;
+; Local interconnects   ; 175 / 24,624 ( < 1 % ) ;
+; R24 interconnects     ; 6 / 2,496 ( < 1 % )    ;
+; R4 interconnects      ; 100 / 62,424 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.62) ; Number of LABs  (Total = 13) ;
+; Number of Logic Elements  (Average = 11.89) ; Number of LABs  (Total = 18) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
+; 8                                           ; 1                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 3                            ;
+; 10                                          ; 2                            ;
 ; 11                                          ; 0                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 1                            ;
 ; 15                                          ; 0                            ;
-; 16                                          ; 7                            ;
+; 16                                          ; 10                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.38) ; Number of LABs  (Total = 13) ;
+; LAB-wide Signals  (Average = 1.28) ; Number of LABs  (Total = 18) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 3                            ;
-; 1 Clock                            ; 10                           ;
+; 1 Clock                            ; 13                           ;
 ; 1 Clock enable                     ; 2                            ;
-; 1 Sync. clear                      ; 2                            ;
+; 1 Sync. clear                      ; 4                            ;
 ; 2 Clocks                           ; 1                            ;
 +------------------------------------+------------------------------+
 
@@ -837,29 +843,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 20.62) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced  (Average = 19.61) ; Number of LABs  (Total = 18) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 0                            ;
 ; 22                                           ; 1                            ;
 ; 23                                           ; 0                            ;
@@ -871,24 +877,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 3                            ;
+; 32                                           ; 5                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.77) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced Out  (Average = 9.56) ; Number of LABs  (Total = 18) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
 ; 1                                               ; 2                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 1                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 2                            ;
 ; 4                                               ; 1                            ;
 ; 5                                               ; 1                            ;
 ; 6                                               ; 1                            ;
 ; 7                                               ; 0                            ;
-; 8                                               ; 0                            ;
+; 8                                               ; 1                            ;
 ; 9                                               ; 1                            ;
 ; 10                                              ; 0                            ;
 ; 11                                              ; 0                            ;
@@ -896,7 +902,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
 ; 15                                              ; 0                            ;
-; 16                                              ; 5                            ;
+; 16                                              ; 7                            ;
 ; 17                                              ; 0                            ;
 ; 18                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
@@ -905,23 +911,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.92) ; Number of LABs  (Total = 13) ;
+; Number of Distinct Inputs  (Average = 11.22) ; Number of LABs  (Total = 18) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 2                            ;
+; 2                                            ; 2                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 3                            ;
 ; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
+; 6                                            ; 2                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 3                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
+; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
 ; 17                                           ; 0                            ;
@@ -938,11 +944,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
-; 31                                           ; 0                            ;
-; 32                                           ; 0                            ;
-; 33                                           ; 0                            ;
-; 34                                           ; 0                            ;
-; 35                                           ; 1                            ;
+; 31                                           ; 1                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1023,8 +1026,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; adc_init_completed_z ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ;
 ; system_clock         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ;
 ; reset_n              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; adc_init             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; adc_ready            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; adc_init             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; system_clock(n)      ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ;
 +----------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
@@ -1065,13 +1068,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary              ;
-+-----------------+----------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
-+-----------------+----------------------+-------------------+
-; system_clock    ; system_clock         ; 3.3               ;
-+-----------------+----------------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                                                                                             ;
++-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+; Source Clock(s)                                                                     ; Destination Clock(s)                                                            ; Delay Added in ns ;
++-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state     ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 14.1              ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state     ; system_clock                                                                    ; 6.0               ;
+; system_clock                                                                        ; system_clock                                                                    ; 3.3               ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state,I/O ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 3.0               ;
+; SPI_Master:SPI_Master_uut|current_state.IDLE                                        ; system_clock                                                                    ; 1.9               ;
++-------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
@@ -1081,41 +1088,82 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
 ; Source Register                                                                 ; Destination Register                                                            ; Delay Added in ns ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 3.261             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[30] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[29] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[28] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[27] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[26] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[25] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[24] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[23] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[22] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[21] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[20] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[19] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[18] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[17] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[16] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[1]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[2]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[3]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[4]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[5]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[6]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[7]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[8]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[9]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[10] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[11] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[12] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[13] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[14] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[15] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[0]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
-; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[31] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.605             ;
+; SPI_Master:SPI_Master_uut|current_state.IDLE                                    ; SPI_Master:SPI_Master_uut|current_state.TRANSACTION_begin                       ; 4.888             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 3.343             ;
+; SPI_Master:SPI_Master_uut|current_state.SETUP                                   ; SPI_Master:SPI_Master_uut|state[1]                                              ; 2.732             ;
+; SPI_Master:SPI_Master_uut|current_state.TRANSACTION_end                         ; SPI_Master:SPI_Master_uut|current_state.IDLE                                    ; 2.030             ;
+; adc_ready                                                                       ; SPI_Master:SPI_Master_uut|current_state.IDLE                                    ; 2.030             ;
+; adc_init                                                                        ; SPI_Master:SPI_Master_uut|current_state.IDLE                                    ; 2.030             ;
+; SPI_Master:SPI_Master_uut|adc_init_completed                                    ; SPI_Master:SPI_Master_uut|current_state.IDLE                                    ; 2.030             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[30] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[29] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[28] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[27] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[26] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[25] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[24] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[23] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[22] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[21] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[20] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[19] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[18] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[17] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[16] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[1]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[2]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[3]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[4]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[5]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[6]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[7]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[8]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[9]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[10] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[11] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[12] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[13] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[14] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[15] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[0]  ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[31] ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state ; 1.656             ;
+; SPI_Master:SPI_Master_uut|SPI_CS                                                ; spi_sclk_generator:spi_sclk_generator_uut|sclk                                  ; 1.603             ;
+; SPI_Master:SPI_Master_uut|current_state.TRANSACTION_begin                       ; SPI_Master:SPI_Master_uut|state[0]                                              ; 0.987             ;
+; reset_n                                                                         ; SPI_Master:SPI_Master_uut|adc_init_completed                                    ; 0.485             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[30]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[29]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[28]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[27]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[26]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[25]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[24]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[23]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[22]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[21]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[20]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[19]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[18]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[17]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[16]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[15]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[14]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[13]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[12]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[11]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[10]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[9]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[8]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[7]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[6]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[5]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[4]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[3]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[2]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[1]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[31]                           ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
+; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; spi_sclk_generator:spi_sclk_generator_uut|counter[0]                            ; 0.483             ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 33 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 74 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1146,6 +1194,7 @@ Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Ass
 Warning (176674): Following 1 pins are differential I/O pins but do not have their complement pins. Hence, the Fitter automatically created the complement pins.
     Warning (176118): Pin "system_clock" is a differential I/O pin but does not have its complement pin. Hence, fitter automatically created the complement pin "system_clock(n)" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 9
 Critical Warning (169085): No exact pin location assignment(s) for 11 pins of 17 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'ADS131A0X.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1157,12 +1206,13 @@ Info (176353): Automatically promoted node SPI_Master:SPI_Master_uut|clock_synth
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state~0 File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v Line: 18
+        Info (176357): Destination node SPI_Master:SPI_Master_uut|current_state.SETUP File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 42
         Info (176357): Destination node led[2]~output File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 11
         Info (176357): Destination node SPI_SCLK~output File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 17
 Info (176353): Automatically promoted node reset_n~input (placed in PIN E15 (CLK4, DIFFCLK_2p)) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 10
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G9
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node SPI_Master:SPI_Master_uut|SPI_RESET~0 File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 16
+        Info (176357): Destination node SPI_Master:SPI_Master_uut|SPI_RESET~0 File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 13
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1179,7 +1229,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  11 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  23 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1188,22 +1238,22 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y23 to location X31_Y34
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X32_Y23 to location X42_Y34
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.26 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.31 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/output_files/ADS131A0X.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5456 megabytes
-    Info: Processing ended: Fri Feb 07 15:15:57 2025
+Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 5460 megabytes
+    Info: Processing ended: Fri Feb 07 16:59:01 2025
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+

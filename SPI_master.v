@@ -3,18 +3,21 @@
 
 module SPI_Master 
 (
-	input 				system_clock,			// System Clock from FPGA - 50Mhz
-	input 				reset_n,					// Reset button
-	input					adc_init,				// Trigger signal to init the adc
-	input 				adc_ready,				// Trigger signal to send SPI transaction
-	output 	reg [2:0]state,					// Keeps track of the current state of SPI
+	input 				system_clock,									// System Clock from FPGA - 50Mhz
+	input 				reset_n,											// Reset button
 	
-	output 	reg		SPI_MOSI,				// SPI MOSI
-	input 				SPI_MISO,				// SPI MISO
-	output	reg		SPI_CS,					//	SPI CS
-	output 				SPI_SCLK,				// SPI SCLK
-	output 	reg 		SPI_RESET,
-	output 				adc_init_completed_z
+	output 	reg		SPI_MOSI,										// SPI MOSI
+	input 				SPI_MISO,										// SPI MISO
+	output	reg		SPI_CS=1'b1,									//	SPI CS
+	output 				SPI_SCLK,										// SPI SCLK
+	output 	reg 		SPI_RESET,										// SPI_RESET - to reset the ADC
+	
+	/* Not essential signals - can be removed */
+	input					adc_init,										// Trigger signal to init the adc
+	input 				adc_ready,										// Trigger signal to send SPI transaction
+	output 	reg [2:0]state,											// debuh - tracks the current state of SPI
+	output 				adc_init_completed_z,							// debug - tracks the state of spi init (done or not done)
+	output 	reg 		adc_transaction_completed					// debug - tracks the state of spi transaction (yes or no)
 );
 
 wire synthesized_clock_4_167Mhz;
@@ -30,9 +33,10 @@ assign SPI_SCLK = synthesized_clock_4_167Mhz;
 
 /* SPI State Definition */
 // Define state encoding using localparams
-localparam IDLE        = 2'b00;
-localparam SETUP       = 2'b01;
-localparam TRANSACTION = 2'b10;
+localparam IDLE        = 3'b000;
+localparam SETUP       = 3'b001;
+localparam TRANSACTION_begin = 3'b010;
+localparam TRANSACTION_end = 3'b011;
 
 // Current and Next States 
 reg [1:0] current_state, next_state;
@@ -42,6 +46,9 @@ reg adc_init_completed = 1'b0;
 
 // ADS131A0xReset() Register
 reg [31:0] counter = 32'b0;
+
+// CS Register - Counts 8 clock cycles before reasserting - 7/2/2025
+reg [3:0] CS_count = 4'd0;
 
 // State transition logic
     always @(posedge synthesized_clock_4_167Mhz or negedge reset_n) begin
@@ -58,12 +65,17 @@ reg [31:0] counter = 32'b0;
 */	
 	 always @(*) begin
 		  case (current_state)
-				IDLE:				next_state = (adc_init_completed != 1) ? (adc_init ? SETUP : IDLE) : (adc_ready ? TRANSACTION : IDLE);
+				IDLE:				next_state = (adc_init_completed != 1) ? (adc_init ? SETUP : IDLE) : (adc_ready ? TRANSACTION_begin : IDLE);
 				
 				// Ensures SETUP is only visited once
-				SETUP:			next_state = (adc_init_completed == 1) ? TRANSACTION : SETUP; 	
+				SETUP:			next_state = (adc_init_completed == 1) ? TRANSACTION_begin : SETUP; 	
 				
-				TRANSACTION:	next_state = adc_ready ? IDLE : TRANSACTION;									// Gets stuck in transaction if SPI Transaction fails
+				// SPI Transaction - TO BE COMPLETED
+				TRANSACTION_begin:	begin next_state = adc_ready ? TRANSACTION_end : TRANSACTION_begin;	 SPI_CS <= 1'b0; end								// Gets stuck in transaction if SPI Transaction fails
+				
+				// SPI Transaction complete
+				TRANSACTION_end: 		begin next_state = IDLE; SPI_CS <= 1'b1; end
+				
 				default:     next_state = IDLE;
 		  endcase
 	 end
