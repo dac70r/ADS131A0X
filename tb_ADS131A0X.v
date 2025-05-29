@@ -16,6 +16,7 @@ wire SPI_CS;
 wire SPI_RESET;
 wire [3:0] led;           // LEDs output
 wire adc_init_completed_z;
+wire [3:0] count_cs_debug;
 
 
 // Instantiate the top module (Device Under Test)
@@ -31,7 +32,8 @@ ADS131A0X uut (
 	 .state(state),
     	.led(led),
 	 .SPI_RESET(SPI_RESET),
-	 .adc_init_completed_z(adc_init_completed_z)
+	 .adc_init_completed_z(adc_init_completed_z),
+	 .count_cs_debug(count_cs_debug)
 );
 
 // Clock generation (50 MHz clock)
@@ -52,9 +54,9 @@ initial begin
 	 #1000
 	 adc_init = 0;
 	 adc_ready = 1;
-	 
+
     // Run the simulation for a period of time (e.g., 2000 ms)
-    #40000000;
+    #50000000;
 
     // End the simulation
     $finish;

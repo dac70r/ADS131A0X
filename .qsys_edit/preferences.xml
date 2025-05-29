@@ -3,11 +3,11 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="47" />
+   <connections preferredWidth="143" />
    <irq preferredWidth="34" />
+   <name preferredWidth="211" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library/Processors and Peripherals/Peripherals,Library/Processors and Peripherals,Library/Memory Interfaces and Controllers,Library,Library/Interface Protocols/Serial,Library/University Program,Library/Basic Functions/On Chip Memory,Library/University Program/Generic IO,Library/Interface Protocols,Library/Memory Interfaces and Controllers/Flash,Library/Basic Functions" />
- <window width="2902" height="1570" x="-11" y="-1631" />
+ <library expandedCategories="Library,Project" />
+ <window width="2481" height="1456" x="239" y="-1556" />
 </preferences>

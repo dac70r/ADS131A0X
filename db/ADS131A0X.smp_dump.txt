@@ -1,7 +1,20 @@
 
 State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|current_state
-Name current_state.TRANSACTION_end current_state.TRANSACTION_begin current_state.SETUP current_state.IDLE 
-current_state.IDLE 0 0 0 0 
-current_state.SETUP 0 0 1 1 
-current_state.TRANSACTION_begin 0 1 0 1 
-current_state.TRANSACTION_end 1 0 0 1 
+Name current_state.TRANSACTION_END current_state.TRANSACTION_IN_PROGRESS current_state.TRANSACTION_BEGIN current_state.WAIT_TRANSACTION current_state.SETUP current_state.IDLE current_state.000 
+current_state.000 0 0 0 0 0 0 0 
+current_state.IDLE 0 0 0 0 0 1 1 
+current_state.SETUP 0 0 0 0 1 0 1 
+current_state.WAIT_TRANSACTION 0 0 0 1 0 0 1 
+current_state.TRANSACTION_BEGIN 0 0 1 0 0 0 1 
+current_state.TRANSACTION_IN_PROGRESS 0 1 0 0 0 0 1 
+current_state.TRANSACTION_END 1 0 0 0 0 0 1 
+
+State Machine - |ADS131A0X|SPI_Master:SPI_Master_uut|next_state
+Name next_state.TRANSACTION_END next_state.TRANSACTION_IN_PROGRESS next_state.TRANSACTION_BEGIN next_state.WAIT_TRANSACTION next_state.SETUP next_state.IDLE next_state.000 
+next_state.000 0 0 0 0 0 0 0 
+next_state.IDLE 0 0 0 0 0 1 1 
+next_state.SETUP 0 0 0 0 1 0 1 
+next_state.WAIT_TRANSACTION 0 0 0 1 0 0 1 
+next_state.TRANSACTION_BEGIN 0 0 1 0 0 0 1 
+next_state.TRANSACTION_IN_PROGRESS 0 1 0 0 0 0 1 
+next_state.TRANSACTION_END 1 0 0 0 0 0 1 

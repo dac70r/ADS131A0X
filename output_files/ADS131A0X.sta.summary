@@ -2,112 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 100C Model Setup 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : -3.938
-TNS   : -3.938
-
-Type  : Slow 1200mV 100C Model Setup 'system_clock'
-Slack : -3.829
-TNS   : -259.552
-
-Type  : Slow 1200mV 100C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.418
-TNS   : -107.772
-
-Type  : Slow 1200mV 100C Model Hold 'system_clock'
-Slack : 0.417
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 43.545
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.418
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.451
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Hold 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 3.642
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 94.987
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.210
-TNS   : -55.250
-
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'system_clock'
-Slack : -1.481
-TNS   : -131.266
-
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 0.418
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.584
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : -3.390
-TNS   : -3.390
-
-Type  : Slow 1200mV -40C Model Setup 'system_clock'
-Slack : -3.302
-TNS   : -211.511
-
-Type  : Slow 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -2.911
-TNS   : -92.387
-
-Type  : Slow 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.344
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.388
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Hold 'system_clock'
-Slack : 0.344
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 44.071
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 3.277
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.400
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.210
-TNS   : -55.250
-
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'system_clock'
-Slack : -1.481
-TNS   : -131.266
-
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 0.439
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 95.408
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : -1.629
-TNS   : -1.629
-
-Type  : Fast 1200mV -40C Model Setup 'system_clock'
-Slack : -1.245
-TNS   : -65.890
-
-Type  : Fast 1200mV -40C Model Setup 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -1.145
-TNS   : -28.906
-
-Type  : Fast 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.179
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.424
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Hold 'system_clock'
-Slack : 0.179
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.244
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Hold 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 2.018
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 47.512
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.000
-TNS   : -44.000
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.186
+TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'system_clock'
-Slack : -1.283
-TNS   : -102.283
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.576
+TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'SPI_Master:SPI_Master_uut|current_state.IDLE'
-Slack : 0.458
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.664
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.267
 TNS   : 0.000
 
 ------------------------------------------------------------
