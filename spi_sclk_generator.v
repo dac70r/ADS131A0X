@@ -2,39 +2,35 @@
 /* SPI Clock Generator with CS Consideration */
 
 module spi_sclk_generator (
-    input  				CLK_4_167,      							// System clock - 4.167Mhz
-    input  				SPI_CS,       							// Chip Select (Active LOW)
+	 input				system_clock,
+    input  				CS,       							// Stimulus to Start and Stop the Clock
 	 output 				SPI_SCLK,
-	 output reg [3:0] count_cs = 4'b0000				// Counter for data of size 8
+	 output		[3:0]	CLOCK_CYCLES,
+	 output				spi_transaction_done
 );
+reg [31:0] 	count 	= 32'd0;
+reg [3:0]	CLOCK_CYCLES_Temp = 'd0;
+reg			spi_transaction_done_Temp = 'd0;
+reg SPI_SCLK_Temp			= 1'd1;
 
-reg SPI_SCLK_Temp = 1'b0;
-
-/* Generates the SPI_SCLK from a regular clock */ 
- always @ (*)
- begin
-	if(SPI_CS == 0)
-		SPI_SCLK_Temp = CLK_4_167;
-	else
-		SPI_SCLK_Temp = 0;
- end
- 
  /* Counts the number of cycles of SCLK */
- /*
- always @ (posedge CLK_4_167)
- begin
-		if(SPI_CS == 1)
-			count_cs <= 4'd0;
-		else begin
-				if(count_cs == 7) 
-					count_cs <= 1'b0; 
+	always @ (posedge system_clock)
+	begin 
+		if(CS==0)
+			begin
+				if(CLOCK_CYCLES_Temp <'d8)
+					begin
+						CLOCK_CYCLES_Temp <= CLOCK_CYCLES_Temp + 'd1;
+					end
 				else
-					count_cs <= count_cs + 1'b1;  
+					CLOCK_CYCLES_Temp <= 'd0;
 			end
- end
- */
- //assign sclk = (cs != 1) ? clk : 0;
+		else
+			SPI_SCLK_Temp <= 1'd1;
+			
+	end
  
- assign SPI_SCLK = SPI_SCLK_Temp;
- 
+ assign SPI_SCLK = (CS == 0 && CLOCK_CYCLES_Temp <8) ? system_clock : 0;
+ assign CLOCK_CYCLES = CLOCK_CYCLES_Temp;
+ assign spi_transaction_done = spi_transaction_done_Temp;
 endmodule

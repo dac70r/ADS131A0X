@@ -8,11 +8,67 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_CS",
+					"strict" : false
+				},
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state[2]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_init_completed",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[0]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[1]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[2]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[3]",
+					"strict" : false
+				},
+				{
 					"name" : "heartbeat",
 					"strict" : false
 				},
 				{
+					"name" : "state_tracker_output[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state_tracker_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state_tracker_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "state_tracker_output[3]",
+					"strict" : false
+				},
+				{
 					"name" : "system_clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
 					"strict" : false
 				},
 				{

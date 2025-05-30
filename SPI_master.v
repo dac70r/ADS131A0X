@@ -8,38 +8,41 @@ module SPI_Master
 	
 	output 	reg		SPI_MOSI,										// SPI MOSI
 	input 				SPI_MISO,										// SPI MISO
-	output	reg		SPI_CS,									//	SPI CS
+	output				SPI_CS,											//	SPI CS
 	output 				SPI_SCLK,										// SPI SCLK
 	output 	reg 		SPI_RESET,										// SPI_RESET - to reset the ADC
 	
 	/* Not essential signals - can be removed */
 	input					adc_init,										// Trigger signal to init the adc
 	input 				adc_ready,										// Trigger signal to send SPI transaction
-	output 	reg [2:0]state,											// debug - tracks the current state of SPI
-	output 				adc_init_completed,						// debug - tracks the state of spi init (done or not done)
+	output 	 [2:0]	state,											// debug - tracks the current state of SPI
+	output 				adc_init_completed,							// debug - tracks the state of spi init (done or not done)
 	output 	reg 		adc_transaction_completed,					// debug - tracks the state of spi transaction (yes or no)
-	output 		[3:0] count_cs											// debug - keeps track of the 
+	output 		[3:0] count_cs,										// debug - keeps track of the 
+	output		[4:0]	state_tracker_output							// debug - keeps track of the state
 );
 
-wire synthesized_clock_4_167Mhz;
-wire SPI_SCLK_Temp; 
+wire	synthesized_clock_4_167Mhz;
+reg	stimulus_temp = 1'b0;
+wire	[3:0]	count_cs_tracker;
+wire	spi_transaction_done;
+reg SPI_CS_Temp = 'd1;
 
-/* Clock Synthesis for SPI*/
-clock_synthesizer #(.COUNTER_LIMIT(6)) clock_synthesizer_uut_0
+clock_synthesizer #(.COUNTER_LIMIT(6))
+clock_synthesizer_uut
 (
-    .input_clock(system_clock), 									// input clock  - 50 Mhz
-	 .clock_pol(synthesized_clock_4_167Mhz)					// output clock - 4.167Mhz 
+	 .input_clock(system_clock), 										// input clock  - 50 Mhz
+	 .clock_pol(synthesized_clock_4_167Mhz)						// output clock - 4.167Mhz
 );
 
 /* Clock Synthesizer for SPI with CS Consideration */
-spi_sclk_generator spi_sclk_generator_uut (
-    .CLK_4_167(synthesized_clock_4_167Mhz),       					// System clock - 4.167Mhz
-    .SPI_CS(SPI_CS),       												// Chip Select (Active LOW)
-	 .SPI_SCLK(SPI_SCLK_Temp),
-	 .count_cs(count_cs)
-); 
-
-assign SPI_SCLK = SPI_SCLK_Temp;
+spi_sclk_generator spi_sclk_generator_uut(
+	 .system_clock(synthesized_clock_4_167Mhz),
+    .CS(SPI_CS),       							// Stimulus to Start and Stop the Clock
+	 .SPI_SCLK(SPI_SCLK),
+	 .CLOCK_CYCLES(count_cs_tracker),
+	 .spi_transaction_done(spi_transaction_done)
+);
 
 /* SPI State Definition */
 // Define state encoding using localparams
@@ -47,7 +50,7 @@ localparam RESET        				= 3'd0;
 localparam IDLE        					= 3'd1;
 localparam SETUP       					= 3'd2;
 localparam WAIT_TRANSACTION			= 3'd3;
-localparam TRANSACTION_BEGIN			= 3'd4;
+//localparam TRANSACTION_BEGIN			= 3'd4;
 localparam TRANSACTION_IN_PROGRESS 	= 3'd5;
 localparam TRANSACTION_END 			= 3'd6;
 
@@ -55,39 +58,67 @@ localparam TRANSACTION_END 			= 3'd6;
 reg [2:0] current_state = 3'b000;
 reg [2:0] next_state = 3'b000;
 
-// State Machine Transition Logic
+// Local Registers
+reg 			adc_init_completed_temp = 1'b0;
+reg	[4:0]	state_tracker				= 5'd0;
+
+
+// State Machine Transition Logic - Defines What Conditions Must be Met to Change States
 always @(posedge synthesized_clock_4_167Mhz or negedge reset_n)
 	 begin
 		if (!reset_n)
 			begin
 				//current_state <= IDLE;	// do reset things
+				state_tracker <= 5'd0;
 			end
-		else if (adc_init_completed == 0)
+		else if (adc_init_completed_temp == 1'b0)
 			begin 
 				//current_state <= SETUP;	// do setup things
+				adc_init_completed_temp	<= 1'b1;
+				state_tracker <= 5'd1;
 			end
 		else
 			begin
 				case(current_state)
 					RESET: 
-						next_state <= IDLE;
+						begin 
+							next_state <= IDLE;
+							state_tracker <= 5'd2;
+						end
 					IDLE:
-						next_state <= SETUP;
+						begin
+							state_tracker <= 5'd3;
+							next_state <= SETUP;
+						end
 					SETUP:
-						next_state <= WAIT_TRANSACTION;
+						begin
+							state_tracker <= 5'd4;
+							next_state <= WAIT_TRANSACTION;
+						end
 					WAIT_TRANSACTION:
-						next_state <= TRANSACTION_BEGIN;
-					TRANSACTION_BEGIN: 			
-						next_state <= TRANSACTION_IN_PROGRESS;
-					TRANSACTION_IN_PROGRESS:
-						if(count_cs == 7)
-							next_state <= TRANSACTION_END;
-						else
+						begin
 							next_state <= TRANSACTION_IN_PROGRESS;
+						end
+					TRANSACTION_IN_PROGRESS:
+						begin
+							state_tracker <= 5'd7;
+							if(count_cs_tracker == 'd8) 
+								begin
+									next_state <= TRANSACTION_END;
+								end
+							else
+								next_state <= TRANSACTION_IN_PROGRESS;
+						end
 					TRANSACTION_END:
-						next_state <= WAIT_TRANSACTION;
+						begin
+							state_tracker <= 5'd8;
+							next_state <= WAIT_TRANSACTION;
+						end
 					default:
-						next_state <= IDLE;
+						begin
+							state_tracker <= 5'd9;
+							next_state <= IDLE;
+						end
 				endcase
 			end
     end
@@ -97,24 +128,34 @@ always @(posedge synthesized_clock_4_167Mhz or negedge reset_n)
 begin
 	case(current_state)
 		IDLE:
-			SPI_CS <= 'd0;
+			begin
+				SPI_CS_Temp <= 1;
+			end
 		SETUP:
-			SPI_CS <= 'd0;
-		WAIT_TRANSACTION:
-			SPI_CS <= 'd0;
-		TRANSACTION_BEGIN: 			
-			SPI_CS <= 'd0;
-		TRANSACTION_IN_PROGRESS: 	
-			SPI_CS <= 'd0;
-		TRANSACTION_END:
-			SPI_CS <= 'd0;
-		default:
-			SPI_CS <= 'd0;
+			begin
+				SPI_CS_Temp <= 1;
+			end
+		WAIT_TRANSACTION: 
+			begin
+				SPI_CS_Temp <= 1;
+			end
+		TRANSACTION_IN_PROGRESS: 
+			begin
+				SPI_CS_Temp <= 0;
+			end
+		TRANSACTION_END: 
+			begin
+				SPI_CS_Temp <= 1;
+			end
+		default: 
+			begin
+				SPI_CS_Temp <= 1;
+			end
 	endcase
 end
 
 // State machine next transition (for Software & NIOS II)
-always@(posedge synthesized_clock_4_167Mhz, negedge reset_n)
+always@(posedge system_clock, negedge reset_n)
 begin
 	if(!reset_n)
 		current_state 			<= RESET;  
@@ -201,7 +242,13 @@ reg count_en = 1'b0;
 			end
 	  end
 	end 
-
-	assign adc_init_completed_z = adc_init_completed;
-	*/
+*/
+	
+	// Debug by Dennis
+	assign SPI_CS = SPI_CS_Temp;
+	assign state = current_state;
+	assign count_cs = count_cs_tracker;
+	assign adc_init_completed = adc_init_completed_temp;
+	assign state_tracker_output = state_tracker;
+	
 endmodule 

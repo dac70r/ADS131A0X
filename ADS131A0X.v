@@ -30,7 +30,8 @@ module ADS131A0X (
 	output [2:0]		state,					 	// Keeps track of the current state of SPI 		- for debugging (remove in final design)
 	output 				adc_init_completed, 	// Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
 	output [3:0]		count_cs_debug,
-	output				heartbeat				 
+	output				heartbeat,		
+	output [4:0]		state_tracker_output	
 	);
 
 wire SPI_SCLK_Temp;										// SPI Clock
@@ -59,7 +60,8 @@ SPI_Master SPI_Master_uut
 	.state(state),												// Keeps track of the current state of SPI
 	.adc_init(adc_init),										// Trigger signal to init the adc
 	.adc_ready(adc_ready),									// Trigger signal to send SPI transaction
-	.count_cs(count_cs)
+	.count_cs(count_cs),
+	.state_tracker_output(state_tracker_output)
 );
 
 	
