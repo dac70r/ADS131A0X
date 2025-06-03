@@ -22,20 +22,21 @@ module ADS131A0X (
 
 	 /* Supplementary SPI Signals for ADC */
 	 // for development purposes, tbc inclusion in main design
-	 input				adc_init,			 		// Trigger signal to init the adc					- for simulation (consider removing in final design)
-	 input 				adc_ready,				 	// Trigger signal to send SPI transaction			- for simulation (consider removing in final design)
+	 input				adc_init,			 			// Trigger signal to init the adc					- for simulation (consider removing in final design)
+	 input 				adc_ready,				 		// Trigger signal to send SPI transaction			- for simulation (consider removing in final design)
 	
 	/* Debugging purposes */
 	// for debugging this module use only, do not include when integrating with main design
-	output [2:0]		state,					 	// Keeps track of the current state of SPI 		- for debugging (remove in final design)
-	output 				adc_init_completed, 	// Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
-	output [3:0]		count_cs_debug,
+	output				clock_4_167Mhz_debug,		// Keeps track of the main clock used in Submodule
+	output [2:0]		state,					 		// Keeps track of the current state of SPI 		- for debugging (remove in final design)
+	output 				adc_init_completed, 			// Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
+	output [4:0]		count_cs_debug,
 	output				heartbeat,		
 	output [4:0]		state_tracker_output	
 	);
 
 wire SPI_SCLK_Temp;										// SPI Clock
-wire [3:0] count_cs;
+wire [4:0] count_cs;
 
 /* Heartbeat Instance */
 heartbeat heartbeat_uut
@@ -56,6 +57,7 @@ SPI_Master SPI_Master_uut
 	.SPI_RESET(SPI_RESET),
 	
 	// Non crucial Signals (for simulation and debugging)
+	.clock_4_167Mhz_debug(clock_4_167Mhz_debug),
 	.adc_init_completed(adc_init_completed),
 	.state(state),												// Keeps track of the current state of SPI
 	.adc_init(adc_init),										// Trigger signal to init the adc
@@ -69,21 +71,3 @@ assign SPI_SCLK = SPI_SCLK_Temp;
 assign count_cs_debug = count_cs;						
 
 endmodule
-
-/* Clock Synthesis Instance */
-/*
-clock_synthesizer clock_synthesizer_uut_1
-(
-    .input_clock(system_clock), 							// input clock  - 50 Mhz
-	 .clock_pol(led[1])										// output clock to led0 @ 1Mhz
-); */
-
-/* Clock Synthesizer for SPI with CS Consideration */
-/*
-	clock_synthesizer #(.COUNTER_LIMIT(6))
-	clock_synthesizer_uut_2
-	(
-		 .input_clock(system_clock), 							// input clock  - 50 Mhz
-		 .clock_pol(synthesized_clock_4Mhz)					// output clock - 4.167Mhz
-	);
-*/

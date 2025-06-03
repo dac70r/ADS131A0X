@@ -12,6 +12,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "clock_4_167Mhz_debug",
+					"strict" : false
+				},
+				{
 					"name" : "state[0]",
 					"strict" : false
 				},
@@ -21,10 +29,6 @@
 				},
 				{
 					"name" : "state[2]",
-					"strict" : false
-				},
-				{
-					"name" : "adc_init_completed",
 					"strict" : false
 				},
 				{
@@ -44,23 +48,11 @@
 					"strict" : false
 				},
 				{
+					"name" : "count_cs_debug[4]",
+					"strict" : false
+				},
+				{
 					"name" : "heartbeat",
-					"strict" : false
-				},
-				{
-					"name" : "state_tracker_output[0]",
-					"strict" : false
-				},
-				{
-					"name" : "state_tracker_output[1]",
-					"strict" : false
-				},
-				{
-					"name" : "state_tracker_output[2]",
-					"strict" : false
-				},
-				{
-					"name" : "state_tracker_output[3]",
 					"strict" : false
 				},
 				{
