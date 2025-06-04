@@ -26,10 +26,10 @@ module SPI_Master
 );
 
 // Hard Coded Messages
-localparam 	number_of_bits				= 'd16 - 'd1;
-localparam	spi_miso_number_of_bits = 'd15;
-reg [7:0] message 			= 8'b1010_1010;
-reg [7:0] message_part1 	= 8'b1111_1111;
+localparam 	number_of_bits		= 'd16 - 'd1;
+
+reg [7:0] message 				= 8'b1010_1010;
+reg [7:0] message_part1 		= 8'b1111_1111;
 reg [15:0] message_part2		= 16'b0000_0110_0101_0101;
 reg [15:0] message_part3		= 16'b0000_0000_0000_0000;
 
@@ -42,7 +42,6 @@ reg 			SPI_MOSI_Temp 		= 1'd0;
 reg 			SPI_CS_Temp 		= 1'd1;							
 reg			SPI_RESET_Temp		= 1'd1;
 reg 			spi_trigger 		= 1'd1;							// Use this to Control SPI Operation (On/Off)
-reg	[15:0]	spi_miso_data = 16'b0;					// This is local storage for MISO Data
 
 /* SPI State Definition */
 // Define state encoding using localparams
@@ -210,16 +209,6 @@ begin
 	endcase
 end
 
-/* SPI MISO Handler */
-// This block handles SPI MISO Signals
-reg [3:0]	spi_miso_bit_count 	= 'd0;
-/*
-always @ (negedge SPI_SCLK_Temp)
-begin
-	if(spi_mosi_bit_count == 'd0)
-		spi_miso_data[] <= SPI_MISO;
-end
-*/
 	// Core Signals 
 	assign SPI_CS						= SPI_CS_Temp;
 	assign SPI_MOSI 					= SPI_MOSI_Temp;
@@ -231,7 +220,6 @@ end
 	assign count_cs 					= count_cs_tracker;
 	assign adc_init_completed 		= adc_init_completed_temp;
 	assign state_tracker_output 	= state_tracker;
-	assign spi_miso_data_output	= spi_miso_data;
 	assign spi_miso_data_cc_output = spi_mosi_bit_count;
 endmodule 
 

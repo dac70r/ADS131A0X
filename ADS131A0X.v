@@ -39,6 +39,7 @@ module ADS131A0X (
 
 wire SPI_SCLK_Temp;										// SPI Clock
 wire [7:0] count_cs;
+reg [15:0] spi_miso_data = 16'b0;
 
 /* Heartbeat Instance */
 heartbeat heartbeat_uut
@@ -66,11 +67,22 @@ SPI_Master SPI_Master_uut
 	.adc_ready(adc_ready),									// Trigger signal to send SPI transaction
 	.count_cs(count_cs),
 	.state_tracker_output(state_tracker_output),
-	.spi_miso_data_output(spi_miso_data_output),		// Keeps track of the SPI MISO in real time
 	.spi_miso_data_cc_output(spi_miso_data_cc_output)
 );
 
-	
+reg [3:0] counter_miso = 4'd0;
+always @ (negedge SPI_SCLK_Temp)
+begin
+	if(counter_miso == 'd0)
+		begin spi_miso_data[0] <= SPI_MISO; end
+	else
+		begin
+			spi_miso_data['d15 - counter_miso + 1] <= SPI_MISO;
+		end
+	counter_miso <= counter_miso + 'd1;
+end
+
+assign spi_miso_data_output = spi_miso_data;
 assign SPI_SCLK = SPI_SCLK_Temp;
 assign count_cs_debug = count_cs;						
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADS131A0X
-Wed Jun  4 15:21:43 2025
+Wed Jun  4 17:10:13 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -53,15 +53,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun  4 15:21:43 2025          ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun  4 17:10:13 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; ADS131A0X                                      ;
 ; Top-level Entity Name              ; ADS131A0X                                      ;
 ; Family                             ; Cyclone 10 LP                                  ;
-; Total logic elements               ; 1,380                                          ;
-;     Total combinational functions  ; 803                                            ;
-;     Dedicated logic registers      ; 1,083                                          ;
-; Total registers                    ; 1083                                           ;
+; Total logic elements               ; 1,416                                          ;
+;     Total combinational functions  ; 839                                            ;
+;     Dedicated logic registers      ; 1,103                                          ;
+; Total registers                    ; 1103                                           ;
 ; Total pins                         ; 49                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 88,064                                         ;
@@ -169,7 +169,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -247,20 +247,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 1,380              ;
+; Estimated Total logic elements              ; 1,416              ;
 ;                                             ;                    ;
-; Total combinational functions               ; 803                ;
+; Total combinational functions               ; 839                ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 308                ;
-;     -- 3 input functions                    ; 196                ;
-;     -- <=2 input functions                  ; 299                ;
+;     -- 4 input functions                    ; 325                ;
+;     -- 3 input functions                    ; 213                ;
+;     -- <=2 input functions                  ; 301                ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 601                ;
+;     -- normal mode                          ; 637                ;
 ;     -- arithmetic mode                      ; 202                ;
 ;                                             ;                    ;
-; Total registers                             ; 1083               ;
-;     -- Dedicated logic registers            ; 1083               ;
+; Total registers                             ; 1103               ;
+;     -- Dedicated logic registers            ; 1103               ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 49                 ;
@@ -270,7 +270,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; system_clock~input ;
 ; Maximum fan-out                             ; 638                ;
-; Total fan-out                               ; 6783               ;
+; Total fan-out                               ; 6961               ;
 ; Average fan-out                             ; 3.33               ;
 +---------------------------------------------+--------------------+
 
@@ -280,7 +280,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |ADS131A0X                                                                                                                              ; 803 (1)             ; 1083 (0)                  ; 88064       ; 0            ; 0       ; 0         ; 49   ; 0            ; |ADS131A0X                                                                                                                                                                                                                                                                                                                                            ; ADS131A0X                         ; work         ;
+; |ADS131A0X                                                                                                                              ; 839 (37)            ; 1103 (20)                 ; 88064       ; 0            ; 0       ; 0         ; 49   ; 0            ; |ADS131A0X                                                                                                                                                                                                                                                                                                                                            ; ADS131A0X                         ; work         ;
 ;    |SPI_Master:SPI_Master_uut|                                                                                                          ; 134 (33)            ; 94 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                                                                                                                                                                                                                                                                                                  ; SPI_Master                        ; work         ;
 ;       |clock_synthesizer:clock_synthesizer_uut|                                                                                         ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut                                                                                                                                                                                                                                                                          ; clock_synthesizer                 ; work         ;
 ;       |spi_sclk_generator:spi_sclk_generator_uut|                                                                                       ; 55 (55)             ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut                                                                                                                                                                                                                                                                        ; spi_sclk_generator                ; work         ;
@@ -401,7 +401,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1083  ;
+; Total registers                              ; 1103  ;
 ; Number of registers using Synchronous Clear  ; 88    ;
 ; Number of registers using Synchronous Load   ; 69    ;
 ; Number of registers using Asynchronous Clear ; 339   ;
@@ -416,7 +416,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state                                                                                                                                                                                                                                        ; 10      ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state                                                                                                                                                                                                                                        ; 30      ;
 ; SPI_Master:SPI_Master_uut|SPI_CS_Temp                                                                                                                                                                                                                                                                                           ; 2       ;
 ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp                                                                                                                                                                                                                                                                                        ; 3       ;
 ; SPI_Master:SPI_Master_uut|spi_mosi_byte_count                                                                                                                                                                                                                                                                                   ; 2       ;
@@ -444,7 +444,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_counter[21] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_counter[22] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -540,6 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; spi_miso_data_cc_output   ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
 ; adc_transaction_completed ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; spi_miso_data_output      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
 +---------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -558,25 +559,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 49                          ;
-; cycloneiii_ff         ; 127                         ;
+; cycloneiii_ff         ; 147                         ;
 ;     CLR               ; 3                           ;
 ;     ENA               ; 7                           ;
 ;     ENA SCLR          ; 8                           ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 77                          ;
-; cycloneiii_lcell_comb ; 187                         ;
+;     plain             ; 97                          ;
+; cycloneiii_lcell_comb ; 223                         ;
 ;     arith             ; 110                         ;
 ;         2 data inputs ; 109                         ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 77                          ;
+;     normal            ; 113                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 44                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 61                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 3.13                        ;
+; Average LUT depth     ; 2.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -585,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -632,38 +633,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; spi_miso_data_cc_output[3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[3]                                                    ; N/A     ;
 ; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
 ; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
+; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[0]                                                                                   ; N/A     ;
+; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[0]                                                                                   ; N/A     ;
+; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[10]                                                                                  ; N/A     ;
+; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[10]                                                                                  ; N/A     ;
+; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[11]                                                                                  ; N/A     ;
+; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[11]                                                                                  ; N/A     ;
+; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[12]                                                                                  ; N/A     ;
+; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[12]                                                                                  ; N/A     ;
+; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[13]                                                                                  ; N/A     ;
+; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[13]                                                                                  ; N/A     ;
+; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[14]                                                                                  ; N/A     ;
+; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[14]                                                                                  ; N/A     ;
+; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[15]                                                                                  ; N/A     ;
+; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[15]                                                                                  ; N/A     ;
+; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[1]                                                                                   ; N/A     ;
+; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[1]                                                                                   ; N/A     ;
+; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[2]                                                                                   ; N/A     ;
+; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[2]                                                                                   ; N/A     ;
+; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[3]                                                                                   ; N/A     ;
+; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[3]                                                                                   ; N/A     ;
+; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[4]                                                                                   ; N/A     ;
+; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[4]                                                                                   ; N/A     ;
+; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[5]                                                                                   ; N/A     ;
+; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[5]                                                                                   ; N/A     ;
+; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[6]                                                                                   ; N/A     ;
+; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[6]                                                                                   ; N/A     ;
+; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[7]                                                                                   ; N/A     ;
+; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[7]                                                                                   ; N/A     ;
+; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[8]                                                                                   ; N/A     ;
+; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[8]                                                                                   ; N/A     ;
+; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[9]                                                                                   ; N/A     ;
+; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[9]                                                                                   ; N/A     ;
 ; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                         ; N/A     ;
 ; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                         ; N/A     ;
 ; state[1]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[1]                                                         ; N/A     ;
@@ -722,7 +723,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Jun  4 15:21:19 2025
+    Info: Processing started: Wed Jun  4 17:09:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADS131A0X -c ADS131A0X
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -737,19 +738,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file spi_mas
 Info (12021): Found 1 design units, including 1 entities, in source file spi_sclk_generator.v
     Info (12023): Found entity 1: spi_sclk_generator File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 8
 Info (12127): Elaborating entity "ADS131A0X" for the top level hierarchy
-Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 48
+Warning (10230): Verilog HDL assignment warning at ADS131A0X.v(82): truncated value with size 32 to match size of target (4) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 82
+Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 49
 Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:SPI_Master_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 71
 Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(31): object "message" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 31
 Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(32): object "message_part1" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 32
-Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(215): object "spi_miso_bit_count" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 215
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(141): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 141
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(189): truncated value with size 32 to match size of target (5) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 189
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(198): truncated value with size 32 to match size of target (5) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 198
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(235): truncated value with size 5 to match size of target (4) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 235
+Warning (10230): Verilog HDL assignment warning at SPI_master.v(140): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 140
+Warning (10230): Verilog HDL assignment warning at SPI_master.v(188): truncated value with size 32 to match size of target (5) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 188
+Warning (10230): Verilog HDL assignment warning at SPI_master.v(197): truncated value with size 32 to match size of target (5) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 197
+Warning (10230): Verilog HDL assignment warning at SPI_master.v(223): truncated value with size 5 to match size of target (4) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 223
+Warning (10034): Output port "spi_miso_data_output" at SPI_master.v(24) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 24
 Warning (10034): Output port "adc_transaction_completed" at SPI_master.v(21) has no driver File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 21
-Info (12128): Elaborating entity "spi_sclk_generator" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 73
+Info (12128): Elaborating entity "spi_sclk_generator" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 72
 Warning (10036): Verilog HDL or VHDL warning at spi_sclk_generator.v(22): object "spi_transaction_done_Temp" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 22
-Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 176
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 175
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qa24.tdf
     Info (12023): Found entity 1: altsyncram_qa24 File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/db/altsyncram_qa24.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ksc.tdf
@@ -772,7 +774,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ggc File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/db/cmpr_ggc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.06.04.15:21:34 Progress: Loading slda5d34450/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.06.04.17:10:00 Progress: Loading slda5d34450/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -803,36 +805,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "state_tracker_output[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
     Warning (13410): Pin "state_tracker_output[3]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
     Warning (13410): Pin "state_tracker_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
-    Warning (13410): Pin "spi_miso_data_output[0]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[1]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[3]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[5]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[6]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[7]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[8]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[9]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[10]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[11]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[12]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[13]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[14]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
-    Warning (13410): Pin "spi_miso_data_output[15]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
     Warning (13410): Pin "spi_miso_data_cc_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 119 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1498 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1534 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 1401 logic cells
+    Info (21061): Implemented 1437 logic cells
     Info (21064): Implemented 43 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Wed Jun  4 15:21:43 2025
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:17
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Wed Jun  4 17:10:14 2025
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:19
 
 
