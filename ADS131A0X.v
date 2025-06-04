@@ -30,13 +30,15 @@ module ADS131A0X (
 	output				clock_4_167Mhz_debug,		// Keeps track of the main clock used in Submodule
 	output [2:0]		state,					 		// Keeps track of the current state of SPI 		- for debugging (remove in final design)
 	output 				adc_init_completed, 			// Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
-	output [4:0]		count_cs_debug,
+	output [7:0]		count_cs_debug,
 	output				heartbeat,		
-	output [4:0]		state_tracker_output	
+	output [4:0]		state_tracker_output,
+	output [15:0]		spi_miso_data_output,
+	output [4:0]		spi_miso_data_cc_output
 	);
 
 wire SPI_SCLK_Temp;										// SPI Clock
-wire [4:0] count_cs;
+wire [7:0] count_cs;
 
 /* Heartbeat Instance */
 heartbeat heartbeat_uut
@@ -63,7 +65,9 @@ SPI_Master SPI_Master_uut
 	.adc_init(adc_init),										// Trigger signal to init the adc
 	.adc_ready(adc_ready),									// Trigger signal to send SPI transaction
 	.count_cs(count_cs),
-	.state_tracker_output(state_tracker_output)
+	.state_tracker_output(state_tracker_output),
+	.spi_miso_data_output(spi_miso_data_output),		// Keeps track of the SPI MISO in real time
+	.spi_miso_data_cc_output(spi_miso_data_cc_output)
 );
 
 	

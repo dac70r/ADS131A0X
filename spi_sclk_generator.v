@@ -8,7 +8,7 @@
 module spi_sclk_generator (
 	 input				system_clock,
 	 output 				SPI_SCLK,
-	 output		[4:0]	CLOCK_CYCLES,
+	 output		[7:0]	CLOCK_CYCLES,
 	 input		[2:0]	state_machine					// State Machine
 );
 
@@ -18,7 +18,7 @@ module spi_sclk_generator (
 localparam TRANSACTION_IN_PROGRESS 		= 3'd6;
 reg [31:0] 	spi_sclk_counter 				= 32'b0;
 reg 			spi_sclk_clock_state 		= 1'b1;
-reg [4:0]	CLOCK_CYCLES_Temp 			= 5'd0;
+reg [7:0]	CLOCK_CYCLES_Temp 			= 8'd0;
 reg			spi_transaction_done_Temp	= 1'd0;
 
 always @ (posedge system_clock)
