@@ -1,0 +1,23 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst ADS131A0X.DEBUG -pg 1 -lvl 3 -y 30
+preplace inst ADS131A0X.RAM -pg 1 -lvl 3 -y 130
+preplace inst ADS131A0X.GPIO -pg 1 -lvl 3 -y 430
+preplace inst ADS131A0X.NIOS.clock_bridge -pg 1
+preplace inst ADS131A0X.TIMER -pg 1 -lvl 3 -y 210
+preplace inst ADS131A0X.CLK -pg 1 -lvl 1 -y 270
+preplace inst ADS131A0X.NIOS.reset_bridge -pg 1
+preplace inst ADS131A0X.NIOS -pg 1 -lvl 2 -y 140
+preplace inst ADS131A0X -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst ADS131A0X.NIOS.cpu -pg 1
+preplace inst ADS131A0X.SPI -pg 1 -lvl 3 -y 310
+preplace netloc FAN_OUT<net_container>ADS131A0X</net_container>(MASTER)NIOS.irq,(SLAVE)SPI.irq,(SLAVE)DEBUG.irq,(SLAVE)TIMER.irq) 1 2 1 790
+preplace netloc EXPORT<net_container>ADS131A0X</net_container>(SLAVE)ADS131A0X.reset,(SLAVE)CLK.clk_in_reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>ADS131A0X</net_container>(SLAVE)GPIO.reset,(SLAVE)RAM.reset1,(SLAVE)DEBUG.reset,(SLAVE)TIMER.reset,(SLAVE)SPI.reset,(MASTER)CLK.clk_reset,(SLAVE)NIOS.reset) 1 1 2 370 100 810
+preplace netloc EXPORT<net_container>ADS131A0X</net_container>(SLAVE)ADS131A0X.gpio_external_connection,(SLAVE)GPIO.external_connection) 1 0 3 NJ 460 NJ 460 NJ
+preplace netloc FAN_OUT<net_container>ADS131A0X</net_container>(SLAVE)NIOS.clk,(SLAVE)GPIO.clk,(SLAVE)RAM.clk1,(MASTER)CLK.clk,(SLAVE)SPI.clk,(SLAVE)DEBUG.clk,(SLAVE)TIMER.clk) 1 1 2 390 360 830
+preplace netloc EXPORT<net_container>ADS131A0X</net_container>(SLAVE)ADS131A0X.clk,(SLAVE)CLK.clk_in) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>ADS131A0X</net_container>(SLAVE)NIOS.debug_mem_slave,(SLAVE)GPIO.s1,(SLAVE)TIMER.s1,(SLAVE)DEBUG.avalon_jtag_slave,(MASTER)NIOS.instruction_master,(SLAVE)RAM.s1,(MASTER)NIOS.data_master,(SLAVE)SPI.spi_control_port) 1 1 2 410 480 770
+preplace netloc EXPORT<net_container>ADS131A0X</net_container>(SLAVE)ADS131A0X.spi_external,(SLAVE)SPI.external) 1 0 3 NJ 340 NJ 340 NJ
+levelinfo -pg 1 0 160 1020
+levelinfo -hier ADS131A0X 170 200 530 860 1010

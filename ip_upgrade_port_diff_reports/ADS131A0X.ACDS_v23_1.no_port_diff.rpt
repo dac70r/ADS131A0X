@@ -1,0 +1,23 @@
+IP Ports Diff Report for ADS131A0X
+Thu May 29 12:38:32 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++--------------------------------------------------------+
+; IP Information                                         ;
++----------------------+---------------------------------+
+; IP Variation Name    ; ADS131A0X                       ;
+; Prior Version        ; ACDS_v18.1                      ;
+; New Version          ; ACDS_v23.1                      ;
+; New File             ; ADS131A0X/synthesis/ADS131A0X.v ;
+; Has Port Differences ; No                              ;
++----------------------+---------------------------------+
+
+

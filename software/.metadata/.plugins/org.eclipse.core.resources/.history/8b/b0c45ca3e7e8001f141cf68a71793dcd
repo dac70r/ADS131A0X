@@ -1,0 +1,110 @@
+#include "sys/alt_stdio.h"
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "altera_avalon_timer_regs.h"
+#include "sys/alt_irq.h"
+#include "altera_avalon_spi.h"
+
+
+// timer ISR - Triggers every period of the timer
+void timer_isr(void *context) {
+    static int led_state = 0;
+
+    // Toggle LED state
+    led_state = !led_state;
+    IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, led_state);
+
+    // Clear the timer interrupt
+    IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
+
+    // Prints the message on Console (UART to Console is established through a USB Blaster)
+    // Such that the message appears in synchronous with the LED
+    if(led_state==0){
+    	alt_putstr("Hello from Nios II!\n");
+    }
+}
+
+// Initializes and Starts the Timer
+void init_timer (void) {
+	IOWR_ALTERA_AVALON_TIMER_CONTROL(TIMER_BASE,
+									 ALTERA_AVALON_TIMER_CONTROL_START_MSK |	//starts the timer
+									 ALTERA_AVALON_TIMER_CONTROL_CONT_MSK |		//timer will restart after reaching the period value
+									 ALTERA_AVALON_TIMER_CONTROL_ITO_MSK);		//timer generates an interrupt when reaching timeout value
+
+	// Register the ISR
+	alt_ic_isr_register(TIMER_IRQ_INTERRUPT_CONTROLLER_ID,
+						TIMER_IRQ,
+						timer_isr,
+						NULL,
+						NULL);
+}
+
+// Initializes the SPI Peripheral
+void spi_command (const alt_u8 * write_data, alt_u32 read_length,
+		alt_u8 * read_data ) {
+
+	int spi_check = alt_avalon_spi_command(SPI_BASE,
+							0,					// number of slaves
+							sizeof(write_data),		// number of bytes to send to SPI Slave, '0' if only reading
+							write_data,			// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+							read_length,		// The number of bytes to read from the SPI slave, '0' if only writing
+							read_data,			// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+							0					// Special control flags for the SPI command
+							);
+	if(spi_check == 0){
+		alt_putstr("SPI Transmit Error!\n");
+	}
+}
+
+// Delay function
+void delay_ms(int milliseconds) {
+    usleep(milliseconds * 1000);  // Convert to microseconds
+}
+
+
+int main()
+{
+	alt_u32 status;
+	alt_u32 opcode_null[] = {0x0000};
+	alt_u8 tx_data[] = {0xA5, 0x5A};
+	alt_u8 rx_data[2];
+	int led_state = 0;
+	//init_timer();
+
+	int spi_check = -1;
+
+	while (1){
+	/*	spi_check = alt_avalon_spi_command(SPI_BASE,
+											0,						// number of slaves
+											sizeof(opcode_null),	// number of bytes to send to SPI Slave, '0' if only reading
+											opcode_null,			// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+											1,						// The number of bytes to read from the SPI slave, '0' if only writing
+											rx_data,				// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+											0						// Special control flags for the SPI command
+											);
+
+		if(spi_check == 0){
+			alt_putstr("SPI Ok!\n");
+			}
+		else
+			alt_putstr("SPI Fault!\n");			*/
+		led_state = !led_state;
+		IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, led_state);
+		delay_ms(1000);
+		}
+  return 0;
+}
+
+// This is incorrect, counting 250,000,00 will take more than 0.5s because this is not RTL
+// clk is 50,000,000
+// so every 0.5 seconds the counter will be overfilled
+/*
+if(count<=25000000){
+	  count++;
+}
+else{
+	  IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, ~(delay));
+	  alt_putstr("Hello from Nios II!\n");
+	  delay = (delay + 1)%2;
+	  count = 0;
+}*/

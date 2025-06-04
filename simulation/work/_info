@@ -9,13 +9,13 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/18.1
 vADS131A0X
-Z0 !s110 1738825373
+Z0 !s110 1739181313
 !i10b 1
-!s100 J[UacSU3AdQAKgCUE5HTo0
-I2Y8S^T]CDGED^C>ZMai^31
+!s100 XQM0^NT]a6[gK5M<jYeN_3
+I=OATMD1OD[2nQ?@?UYV3R1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/simulation
-w1738825361
+w1739176392
 8C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v
 FC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v
 L0 8
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1738825373.000000
+Z4 !s108 1739181312.000000
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v|
 !i113 1
@@ -52,28 +52,28 @@ r1
 R5
 R6
 vclock_synthesizer
-Z7 !s110 1738825374
+R0
 !i10b 1
-!s100 PJde5hd6lZl<Ej>mociCD0
-IHkzb]OafLinjH5fN?mnKG3
+!s100 =JVc7D@iGRLb[<;LkG<Fi3
+Im:>T<C`lc6WH8zlC99_Z<2
 R1
 R2
-w1738825176
+w1738829022
 8C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v
 FC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v
-L0 4
+L0 5
 R3
 r1
 !s85 0
 31
-!s108 1738825374.000000
+Z7 !s108 1739181313.000000
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/clock_synthesizer.v|
 !i113 1
 R5
 R6
 vheartbeat
-R7
+R0
 !i10b 1
 !s100 f;WD@iW24dnHS@m4mKB7k3
 I2>7LQ_`i0<g2``8PJ>n^W3
@@ -87,20 +87,63 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/heartbeat.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/heartbeat.v|
 !i113 1
 R5
 R6
-vtb_ADS131A0X
+vSPI_Master
 R0
 !i10b 1
-!s100 1@58]4935h^Yj4Ilhj_eg2
-ImXf@WJ87kl>dj[g2kllc:3
+!s100 jihcUm]VR`i8h7^oY7[3f2
+IOYEQ[Dgf:[k55900F]jBL3
 R1
 R2
-w1738824362
+w1739181308
+8C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v
+FC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v
+L0 4
+R3
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v|
+!i113 1
+R5
+R6
+n@s@p@i_@master
+vspi_sclk_generator
+R0
+!i10b 1
+!s100 Xb1DmJHdG:?b5<ml16J8e1
+IoekH27H>;W2Ei@XAG[n7k0
+R1
+R2
+w1739180965
+8C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v
+FC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v
+L0 4
+R3
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v|
+!i113 1
+R5
+R6
+vtb_ADS131A0X
+!s110 1739181312
+!i10b 1
+!s100 0_2Bi[;ZhD5z:Re5hOfAH2
+ITjKjM^WizGALH3k6Pe]4L1
+R1
+R2
+w1739168673
 8C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/tb_ADS131A0X.v
 FC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/tb_ADS131A0X.v
 L0 3

@@ -2,76 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 100C Model Setup 'system_clock'
-Slack : -3.963
-TNS   : -144.484
-
-Type  : Slow 1200mV 100C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -0.422
-TNS   : -0.722
-
-Type  : Slow 1200mV 100C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.418
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 43.320
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Hold 'system_clock'
-Slack : 0.418
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.451
 TNS   : 0.000
 
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.210
-TNS   : -10.275
-
-Type  : Slow 1200mV 100C Model Minimum Pulse Width 'system_clock'
-Slack : -1.481
-TNS   : -88.861
-
-Type  : Slow 1200mV -40C Model Setup 'system_clock'
-Slack : -3.416
-TNS   : -113.957
-
-Type  : Slow 1200mV -40C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -0.224
-TNS   : -0.364
-
-Type  : Slow 1200mV -40C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.344
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 95.110
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Hold 'system_clock'
-Slack : 0.344
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.368
 TNS   : 0.000
 
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.210
-TNS   : -10.275
-
-Type  : Slow 1200mV -40C Model Minimum Pulse Width 'system_clock'
-Slack : -1.481
-TNS   : -88.861
-
-Type  : Fast 1200mV -40C Model Setup 'system_clock'
-Slack : -1.368
-TNS   : -31.137
-
-Type  : Fast 1200mV -40C Model Setup 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.342
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.388
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Hold 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : 0.179
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 43.742
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Hold 'system_clock'
-Slack : 0.180
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.400
 TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'SPI_Master:comb_3|clock_synthesizer:clock_synthesizer_uut_0|clock_state'
-Slack : -3.000
-TNS   : -9.000
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 95.461
+TNS   : 0.000
 
-Type  : Fast 1200mV -40C Model Minimum Pulse Width 'system_clock'
-Slack : -1.283
-TNS   : -69.283
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.271
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.241
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 47.299
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.703
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.575
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.266
+TNS   : 0.000
 
 ------------------------------------------------------------

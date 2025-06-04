@@ -4,19 +4,23 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "led[0]",
-					"strict" : false
-				},
-				{
-					"name" : "led[1]",
-					"strict" : false
-				},
-				{
-					"name" : "led[2]",
-					"strict" : false
-				},
-				{
 					"name" : "SPI_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CS",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "clock_4_167Mhz_debug",
 					"strict" : false
 				},
 				{
@@ -28,11 +32,63 @@
 					"strict" : false
 				},
 				{
-					"name" : "system_clock",
+					"name" : "state[2]",
 					"strict" : false
 				},
 				{
-					"name" : "adc_init",
+					"name" : "count_cs_debug[0]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[1]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[2]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[3]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[4]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[5]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[6]",
+					"strict" : false
+				},
+				{
+					"name" : "count_cs_debug[7]",
+					"strict" : false
+				},
+				{
+					"name" : "heartbeat",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[0]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "system_clock",
 					"strict" : false
 				},
 				{
@@ -40,7 +96,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "adc_ready",
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
 					"strict" : false
 				}
 			]
