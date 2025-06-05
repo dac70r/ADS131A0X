@@ -16,10 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_MOSI",
-					"strict" : false
-				},
-				{
 					"name" : "clock_4_167Mhz_debug",
 					"strict" : false
 				},
@@ -149,6 +145,10 @@
 				},
 				{
 					"name" : "spi_miso_data_cc_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[4]",
 					"strict" : false
 				},
 				{

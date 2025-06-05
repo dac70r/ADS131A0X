@@ -8,63 +8,61 @@
 module spi_sclk_generator (
 	 input				system_clock,
 	 output 				SPI_SCLK,
+	 output				SPI_SCLK_internal_use,
 	 output		[7:0]	CLOCK_CYCLES,
-	 input		[2:0]	state_machine					// State Machine
+	 input		[4:0]	state_machine					// State Machine
 );
 
 
 // This Block is triggered by the State Machine (TRANSACTION_IN_PROGRESS) State to generate SPI_SCLK
 // If NOT, SPI_SCLK will be deasserted 
-localparam TRANSACTION_IN_PROGRESS 		= 3'd6;
-reg [31:0] 	spi_sclk_counter 				= 32'b0;
-reg 			spi_sclk_clock_state 		= 1'b1;
-reg [7:0]	CLOCK_CYCLES_Temp 			= 8'd0;
-reg			spi_transaction_done_Temp	= 1'd0;
+localparam TRANSACTION_IN_PROGRESS 			= 3'd6;
+localparam TRANSACTION_IN_PROGRESS_0655 	= 3'd8;
+localparam TRANSACTION_IN_PROGRESS_0555 	= 3'd10;
+reg [31:0] 	spi_sclk_counter 					= 32'b0;
+reg 			spi_sclk_clock_state 			= 1'b1;
+reg [7:0]	CLOCK_CYCLES_Temp 				= 8'd0;
+reg			spi_transaction_done_Temp		= 1'd0;
+wire			synthesized_clock_8_333Mhz;
 
-always @ (posedge system_clock)
+/* Clock Synthesizer - 5Mhz*/
+clock_synthesizer #(.COUNTER_LIMIT(3))
+clock_synthesizer_uut
+(
+	 .input_clock(system_clock), 										// input clock  - 50 Mhz
+	 .clock_pol(synthesized_clock_8_333Mhz)						// output clock - 5Mhz
+);
+
+always @ (posedge synthesized_clock_8_333Mhz)
 begin
 	if(state_machine == TRANSACTION_IN_PROGRESS) 
 		begin
-			if(spi_sclk_counter == 6) 		// Change the number to modify the frequency of SPI_SCLK
-				begin 
-					spi_sclk_counter 		<= 32'd0; 
-					spi_sclk_clock_state <= ~spi_sclk_clock_state;
-					CLOCK_CYCLES_Temp		<= CLOCK_CYCLES_Temp + 1'd1;
-				end
-			else
-				begin spi_sclk_counter <= spi_sclk_counter + 1; end 
+			//if(spi_sclk_counter == 5) 		// Change the number to modify the frequency of SPI_SCLK
+				//begin
+					//spi_sclk_counter 		<= 32'd0;
+					//spi_sclk_clock_state <= ~spi_sclk_clock_state;
+					if(CLOCK_CYCLES_Temp <= ('d15 + 'd16))
+						begin 
+							spi_sclk_clock_state <= ~spi_sclk_clock_state;
+							CLOCK_CYCLES_Temp		<= CLOCK_CYCLES_Temp + 'd1;
+						end
+					else	
+						spi_sclk_clock_state <= spi_sclk_clock_state;
+				//end
+			//else
+				//begin spi_sclk_counter <= spi_sclk_counter + 1; end 
 		end
 	else 
 		begin
-			spi_sclk_counter 	<= 32'd0; 
+			//spi_sclk_counter 	<= 32'd0; 
 			spi_sclk_clock_state <= 1'd0;
-			CLOCK_CYCLES_Temp	<= 'd0;
+			CLOCK_CYCLES_Temp		<= 'd0;
 		end
 end
  
-assign SPI_SCLK = spi_sclk_clock_state;
-assign CLOCK_CYCLES = CLOCK_CYCLES_Temp;
+assign SPI_SCLK_internal_use	= spi_sclk_clock_state;
+assign SPI_SCLK 					= spi_sclk_clock_state; //(CLOCK_CYCLES_Temp <= 32) ? spi_sclk_clock_state: 'd0;
+assign CLOCK_CYCLES 				= CLOCK_CYCLES_Temp;
 
  
 endmodule
-
-
-// This block keeps track of the number of clock cycles of SPI_SCLK 
-// Clock: spi_sclk_clock_state (4.167Mhz)
-//reg [3:0]	CLOCK_CYCLES_Temp = 'd0;
-//reg			spi_transaction_done_Temp = 'd0;
-
-/*
-always @ (posedge spi_sclk_clock_state)	
-	begin 
-		if(CLOCK_CYCLES_Temp <'d8)
-				CLOCK_CYCLES_Temp <= CLOCK_CYCLES_Temp + 'd1;
-		else
-			CLOCK_CYCLES_Temp <= 'd0;		// resets
-	end
-
-assign CLOCK_CYCLES = CLOCK_CYCLES_Temp;
-*/
-
- //assign SPI_SCLK = (CS == 0 && CLOCK_CYCLES_Temp <8) ? system_clock : 0;
- //assign spi_transaction_done = spi_transaction_done_Temp;
