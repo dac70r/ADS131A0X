@@ -41,7 +41,7 @@ begin
 				//begin
 					//spi_sclk_counter 		<= 32'd0;
 					//spi_sclk_clock_state <= ~spi_sclk_clock_state;
-					if(CLOCK_CYCLES_Temp <= ('d15 + 'd16))
+					if(CLOCK_CYCLES_Temp <= ('d15 + 'd16 + 'd16 + 'd16))
 						begin 
 							spi_sclk_clock_state <= ~spi_sclk_clock_state;
 							CLOCK_CYCLES_Temp		<= CLOCK_CYCLES_Temp + 'd1;

@@ -16,6 +16,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
 					"name" : "clock_4_167Mhz_debug",
 					"strict" : false
 				},
@@ -132,6 +136,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "spi_miso_data_output[16]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[17]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[18]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[19]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[20]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[21]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[22]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[23]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[24]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[25]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[26]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[27]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[28]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[29]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[30]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_output[31]",
+					"strict" : false
+				},
+				{
 					"name" : "spi_miso_data_cc_output[0]",
 					"strict" : false
 				},
@@ -149,6 +217,18 @@
 				},
 				{
 					"name" : "spi_miso_data_cc_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_miso_data_cc_output[7]",
 					"strict" : false
 				},
 				{

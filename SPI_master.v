@@ -13,23 +13,19 @@ module SPI_Master
 	output 		 		SPI_RESET,										// SPI_RESET - to reset the ADC
 	
 	/* Not essential signals - can be removed */
-	output				clock_4_167Mhz_debug,					
-	input					adc_init,										// Trigger signal to init the adc
-	input 				adc_ready,										// Trigger signal to send SPI transaction
-	output 	 [4:0]	state,											// debug - tracks the current state of SPI
-	output 				adc_init_completed,							// debug - tracks the state of spi init (done or not done)
-	output 	reg 		adc_transaction_completed,					// debug - tracks the state of spi transaction (yes or no)
+	output				clock_4_167Mhz_debug,						// 
+	output 	 	[4:0] state,											// debug - tracks the current state of SPI)
 	output 		[7:0] count_cs,										// debug - keeps track of the 
 	output		[4:0]	state_tracker_output,						// debug - keeps track of the state
-	output		[15:0]spi_miso_data_output,							// debug - keeps track of the spi_miso_data received
-	output		[4:0] spi_miso_data_cc_output
+	input			[31:0]spi_miso_data_input,							// debug - keeps track of the spi_miso_data received
+	output		[7:0] spi_miso_data_cc_output
 );
 
 // Hard Coded Messages
-localparam 	number_of_bits			= 'd16;
-reg [15:0] message_part_0555 			= 16'b0000_0101_0101_0101;		// 0x0555
-reg [15:0] message_part_0655			= 16'b0000_0110_0101_0101;		// 0x0655
-reg [15:0] message_part_0000			= 16'b0000_0000_0000_0000;		// 0x0000
+localparam 	number_of_bits			= 'd32;
+reg [31:0] message_part_0555 			= 16'b0000_0101_0101_0101_0000_0000_0000_0000;		// 0x0555
+reg [31:0] message_part_0655			= 32'h06550101;												// 0x0655
+reg [31:0] message_part_0000			= 32'b0000_0000_0000_0000_0000_0000_0000_0000;		// 0x0000
 
 wire	synthesized_clock_4_167Mhz;					// Main Clock of this Submodule							
 wire	[7:0]	count_cs_tracker;							// Tracks the Clock Cycles within each SPI Transmission
@@ -62,7 +58,6 @@ reg [4:0] next_state 							= 5'd0;
 
 // Local Registers and Counters
 wire				SPI_SCLK_internal_use;
-reg 				adc_init_completed_temp 			= 1'b0;
 reg	[4:0]		state_tracker							= 5'd0;
 reg	[7:0] 	adc_reset_count						= 8'd0;		// Counter for ADC Reset (Single Use)	
 reg	[31:0]	delay_counter_transition_logic	= 32'd0;		// Counter for tracking 50ns delay in Setting Up ADC
@@ -114,7 +109,7 @@ always @(*)
 				end
 			TRANSACTION_IN_PROGRESS:								// State 6: Sends 0x0000 to ADC, expects 0xff04
 				begin
-					if(count_cs_tracker == 'd32) 
+					if(count_cs_tracker == 'd64) 
 						begin
 							next_state = TRANSACTION_END;
 						end
@@ -225,7 +220,7 @@ clock_synthesizer_uut
 
 /* SPI MOSI Handler */
 // This block handles SPI MOSI Signals
-reg [4:0]	spi_mosi_bit_count 	= 'd0;
+reg [7:0]	spi_mosi_bit_count 	= 'd0;
 reg 			spi_mosi_byte_count	= 'd0;
 
 always @ (posedge SPI_SCLK_internal_use)
@@ -242,23 +237,20 @@ begin
 						begin
 							spi_mosi_bit_count 	<= 'd0;
 						end
-					if(spi_miso_data_output == 16'hff04)
-						begin
-							spi_mosi_byte_count 	<= 'd0;
-						end
 					*/
+					if(spi_miso_data_input == 32'hff04_0000)
+						begin
+							spi_mosi_byte_count 	<= 'd1;
+						end
 				end
 			1: 
 				begin
 					SPI_MOSI_Temp 			<= message_part_0655[number_of_bits - spi_mosi_bit_count];
 					spi_mosi_bit_count 	<= spi_mosi_bit_count + 'd1;
-					/*
-					if(spi_mosi_bit_count == 'd15)
+					if(spi_miso_data_input == 32'h0655_0101)
 						begin
-							spi_mosi_bit_count 	<= 'd0;
-							//spi_mosi_byte_count 	<= 'd0;
+							spi_mosi_byte_count 	<= 'd0;
 						end
-					*/
 				end
 			default:
 				begin
@@ -282,7 +274,6 @@ end
 	assign clock_4_167Mhz_debug		= synthesized_clock_4_167Mhz;
 	assign state 							= current_state;
 	assign count_cs 						= count_cs_tracker;
-	assign adc_init_completed 			= adc_init_completed_temp;
 	assign state_tracker_output 		= state_tracker;
 	assign spi_miso_data_cc_output 	= spi_mosi_bit_count;
 endmodule 
