@@ -24,13 +24,22 @@ reg 			spi_sclk_clock_state 			= 1'b1;
 reg [7:0]	CLOCK_CYCLES_Temp 				= 8'd0;
 reg			spi_transaction_done_Temp		= 1'd0;
 wire			synthesized_clock_8_333Mhz;
+wire			synthesized_clock_4_167Mhz;
 
-/* Clock Synthesizer - 5Mhz*/
+/* Clock Synthesizer - 8.333Mhz*/
 clock_synthesizer #(.COUNTER_LIMIT(3))
-clock_synthesizer_uut
+clock_synthesizer_uut_0
 (
 	 .input_clock(system_clock), 										// input clock  - 50 Mhz
 	 .clock_pol(synthesized_clock_8_333Mhz)						// output clock - 5Mhz
+);
+
+/* Clock Synthesizer - 4.167Mhz*/
+clock_synthesizer #(.COUNTER_LIMIT(6))
+clock_synthesizer_uut_1
+(
+	 .input_clock(system_clock), 										// input clock  - 50 Mhz
+	 .clock_pol(synthesized_clock_4_167Mhz)						// output clock - 5Mhz
 );
 
 always @ (posedge synthesized_clock_8_333Mhz)
@@ -60,7 +69,7 @@ begin
 		end
 end
  
-assign SPI_SCLK_internal_use	= spi_sclk_clock_state;
+assign SPI_SCLK_internal_use	= synthesized_clock_4_167Mhz;
 assign SPI_SCLK 					= spi_sclk_clock_state; //(CLOCK_CYCLES_Temp <= 32) ? spi_sclk_clock_state: 'd0;
 assign CLOCK_CYCLES 				= CLOCK_CYCLES_Temp;
 

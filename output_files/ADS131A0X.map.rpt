@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ADS131A0X
-Thu Jun  5 18:18:28 2025
+Fri Jun  6 09:03:38 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -15,19 +15,21 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for sld_signaltap:auto_signaltap_0
- 15. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut
- 16. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut
- 17. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 18. Signal Tap Logic Analyzer Settings
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Connections to In-System Debugging Instance "auto_signaltap_0"
- 22. Analysis & Synthesis Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for sld_signaltap:auto_signaltap_0
+ 16. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0
+ 17. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1
+ 18. Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut
+ 19. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 20. Signal Tap Logic Analyzer Settings
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -54,15 +56,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun  5 18:18:27 2025          ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun  6 09:03:38 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; ADS131A0X                                      ;
 ; Top-level Entity Name              ; ADS131A0X                                      ;
 ; Family                             ; Cyclone 10 LP                                  ;
-; Total logic elements               ; 1,710                                          ;
-;     Total combinational functions  ; 953                                            ;
-;     Dedicated logic registers      ; 1,334                                          ;
-; Total registers                    ; 1334                                           ;
+; Total logic elements               ; 1,674                                          ;
+;     Total combinational functions  ; 918                                            ;
+;     Dedicated logic registers      ; 1,325                                          ;
+; Total registers                    ; 1325                                           ;
 ; Total pins                         ; 70                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 124,928                                        ;
@@ -170,9 +172,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -250,20 +252,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 1,710              ;
+; Estimated Total logic elements              ; 1,674              ;
 ;                                             ;                    ;
-; Total combinational functions               ; 953                ;
+; Total combinational functions               ; 918                ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 400                ;
-;     -- 3 input functions                    ; 215                ;
-;     -- <=2 input functions                  ; 338                ;
+;     -- 4 input functions                    ; 354                ;
+;     -- 3 input functions                    ; 216                ;
+;     -- <=2 input functions                  ; 348                ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 741                ;
-;     -- arithmetic mode                      ; 212                ;
+;     -- normal mode                          ; 690                ;
+;     -- arithmetic mode                      ; 228                ;
 ;                                             ;                    ;
-; Total registers                             ; 1334               ;
-;     -- Dedicated logic registers            ; 1334               ;
+; Total registers                             ; 1325               ;
+;     -- Dedicated logic registers            ; 1325               ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 70                 ;
@@ -272,9 +274,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; system_clock~input ;
-; Maximum fan-out                             ; 759                ;
-; Total fan-out                               ; 8465               ;
-; Average fan-out                             ; 3.39               ;
+; Maximum fan-out                             ; 792                ;
+; Total fan-out                               ; 8240               ;
+; Average fan-out                             ; 3.36               ;
 +---------------------------------------------+--------------------+
 
 
@@ -283,12 +285,13 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |ADS131A0X                                                                                                                              ; 953 (61)            ; 1334 (32)                 ; 124928      ; 0            ; 0       ; 0         ; 70   ; 0            ; |ADS131A0X                                                                                                                                                                                                                                                                                                                                            ; ADS131A0X                         ; work         ;
-;    |SPI_Master:SPI_Master_uut|                                                                                                          ; 160 (102)           ; 98 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                                                                                                                                                                                                                                                                                                  ; SPI_Master                        ; work         ;
-;       |clock_synthesizer:clock_synthesizer_uut|                                                                                         ; 45 (45)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut                                                                                                                                                                                                                                                                          ; clock_synthesizer                 ; work         ;
-;       |spi_sclk_generator:spi_sclk_generator_uut|                                                                                       ; 13 (12)             ; 10 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut                                                                                                                                                                                                                                                                        ; spi_sclk_generator                ; work         ;
-;          |clock_synthesizer:clock_synthesizer_uut|                                                                                      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut                                                                                                                                                                                                                                ; clock_synthesizer                 ; work         ;
-;    |heartbeat:heartbeat_uut|                                                                                                            ; 51 (51)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|heartbeat:heartbeat_uut                                                                                                                                                                                                                                                                                                                    ; heartbeat                         ; work         ;
+; |ADS131A0X                                                                                                                              ; 918 (1)             ; 1325 (0)                  ; 124928      ; 0            ; 0       ; 0         ; 70   ; 0            ; |ADS131A0X                                                                                                                                                                                                                                                                                                                                            ; ADS131A0X                         ; work         ;
+;    |SPI_Master:SPI_Master_uut|                                                                                                          ; 184 (81)            ; 120 (45)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut                                                                                                                                                                                                                                                                                                                  ; SPI_Master                        ; work         ;
+;       |clock_synthesizer:clock_synthesizer_uut|                                                                                         ; 33 (33)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut                                                                                                                                                                                                                                                                          ; clock_synthesizer                 ; work         ;
+;       |spi_sclk_generator:spi_sclk_generator_uut|                                                                                       ; 70 (12)             ; 43 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut                                                                                                                                                                                                                                                                        ; spi_sclk_generator                ; work         ;
+;          |clock_synthesizer:clock_synthesizer_uut_0|                                                                                    ; 12 (12)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0                                                                                                                                                                                                                              ; clock_synthesizer                 ; work         ;
+;          |clock_synthesizer:clock_synthesizer_uut_1|                                                                                    ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1                                                                                                                                                                                                                              ; clock_synthesizer                 ; work         ;
+;    |heartbeat:heartbeat_uut|                                                                                                            ; 52 (52)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|heartbeat:heartbeat_uut                                                                                                                                                                                                                                                                                                                    ; heartbeat                         ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 126 (1)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 125 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 125 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ADS131A0X|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -418,47 +421,60 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                  ;
-+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-; Register name                                                                                                           ; Reason for Removal                                                                        ;
-+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-; SPI_Master:SPI_Master_uut|current_state[3,4]                                                                            ; Stuck at GND due to stuck port data_in                                                    ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[1]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[1]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[0]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[0]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[31] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[31] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[30] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[30] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[29] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[29] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[28] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[28] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[27] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[27] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[26] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[26] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[25] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[25] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[24] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[24] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[23] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[23] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[22] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[22] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[21] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[21] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[20] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[20] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[19] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[19] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[18] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[18] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[17] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[17] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[16] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[16] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[15] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[15] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[14] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[14] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[13] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[13] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[12] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[12] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[11] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[11] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[10] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[10] ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[9]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[9]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[8]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[8]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[7]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[7]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[6]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[6]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[5]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[5]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[4]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[4]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[3]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[3]  ;
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut|counter[2]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[2]  ;
-; heartbeat:heartbeat_uut|counter[0]                                                                                      ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[0]  ;
-; Total Number of Removed Registers = 35                                                                                  ;                                                                                           ;
-+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                      ;
++----------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                                                        ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+; SPI_Master:SPI_Master_uut|SPI_MOSI_Temp            ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|Equal0 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                                                                            ;                        ;
++----------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+; Register name                                                                                                             ; Reason for Removal                                                                        ;
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+; SPI_Master:SPI_Master_uut|current_state[3,4]                                                                              ; Stuck at GND due to stuck port data_in                                                    ;
+; spi_miso_data[1..31]                                                                                                      ; Stuck at GND due to stuck port clock_enable                                               ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[1]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[1]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[0]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[0]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[31] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[31] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[30] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[30] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[29] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[29] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[28] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[28] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[27] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[27] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[26] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[26] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[25] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[25] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[24] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[24] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[23] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[23] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[22] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[22] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[21] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[21] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[20] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[20] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[19] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[19] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[18] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[18] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[17] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[17] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[16] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[16] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[15] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[15] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[14] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[14] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[13] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[13] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[12] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[12] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[11] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[11] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[10] ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[10] ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[9]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[9]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[8]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[8]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[7]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[7]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[6]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[6]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[5]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[5]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[4]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[4]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[3]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[3]  ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0|counter[2]  ; Merged with SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[2]  ;
+; spi_miso_data[0]                                                                                                          ; Stuck at GND due to stuck port clock_enable                                               ;
+; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|counter[0]                                              ; Merged with heartbeat:heartbeat_uut|counter[0]                                            ;
+; Total Number of Removed Registers = 67                                                                                    ;                                                                                           ;
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -466,8 +482,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1334  ;
-; Number of registers using Synchronous Clear  ; 64    ;
+; Total registers                              ; 1325  ;
+; Number of registers using Synchronous Clear  ; 56    ;
 ; Number of registers using Synchronous Load   ; 69    ;
 ; Number of registers using Asynchronous Clear ; 411   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -481,7 +497,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state                                                                                                                                                                                                                                        ; 45      ;
+; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state                                                                                                                                                                                                                                        ; 3       ;
 ; SPI_Master:SPI_Master_uut|SPI_CS_Temp                                                                                                                                                                                                                                                                                           ; 2       ;
 ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp                                                                                                                                                                                                                                                                                        ; 3       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
@@ -507,7 +523,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ADS131A0X|SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -520,13 +536,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+-------+------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                                                            ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------------------+
-; COUNTER_LIMIT  ; 3     ; Signed Integer                                                                                                                  ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
+; COUNTER_LIMIT  ; 3     ; Signed Integer                                                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
+; COUNTER_LIMIT  ; 6     ; Signed Integer                                                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -621,25 +647,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 70                          ;
-; cycloneiii_ff         ; 162                         ;
+; cycloneiii_ff         ; 153                         ;
 ;     CLR               ; 3                           ;
 ;     ENA               ; 41                          ;
 ;     ENA SCLR          ; 8                           ;
-;     SCLR              ; 8                           ;
-;     plain             ; 102                         ;
-; cycloneiii_lcell_comb ; 272                         ;
-;     arith             ; 120                         ;
-;         2 data inputs ; 118                         ;
+;     plain             ; 101                         ;
+; cycloneiii_lcell_comb ; 237                         ;
+;     arith             ; 136                         ;
+;         2 data inputs ; 134                         ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 152                         ;
-;         0 data inputs ; 2                           ;
+;     normal            ; 101                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 27                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 103                         ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 57                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.80                        ;
-; Average LUT depth     ; 3.36                        ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 3.25                        ;
 +-----------------------+-----------------------------+
 
 
@@ -652,167 +677,167 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                             ;
-+----------------------------+---------------+-----------+--------------------------------+-------------------+----------------------------------------------------------------------------------------------------+---------+
-; Name                       ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                                                  ; Details ;
-+----------------------------+---------------+-----------+--------------------------------+-------------------+----------------------------------------------------------------------------------------------------+---------+
-; SPI_CS                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_CS_Temp~_wirecell                                                    ; N/A     ;
-; SPI_CS                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_CS_Temp~_wirecell                                                    ; N/A     ;
-; SPI_MISO                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_MISO                                                                                           ; N/A     ;
-; SPI_MISO                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_MISO                                                                                           ; N/A     ;
-; SPI_MOSI                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_MOSI_Temp                                                            ; N/A     ;
-; SPI_MOSI                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_MOSI_Temp                                                            ; N/A     ;
-; SPI_RESET                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp~_wirecell                                                 ; N/A     ;
-; SPI_RESET                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp~_wirecell                                                 ; N/A     ;
-; SPI_SCLK                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state~_wirecell ; N/A     ;
-; SPI_SCLK                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state~_wirecell ; N/A     ;
-; clock_4_167Mhz_debug       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|clock_state                      ; N/A     ;
-; clock_4_167Mhz_debug       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|clock_synthesizer:clock_synthesizer_uut|clock_state                      ; N/A     ;
-; count_cs_debug[0]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0]           ; N/A     ;
-; count_cs_debug[0]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0]           ; N/A     ;
-; count_cs_debug[1]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[1]           ; N/A     ;
-; count_cs_debug[1]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[1]           ; N/A     ;
-; count_cs_debug[2]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[2]           ; N/A     ;
-; count_cs_debug[2]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[2]           ; N/A     ;
-; count_cs_debug[3]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[3]           ; N/A     ;
-; count_cs_debug[3]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[3]           ; N/A     ;
-; count_cs_debug[4]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[4]           ; N/A     ;
-; count_cs_debug[4]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[4]           ; N/A     ;
-; count_cs_debug[5]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[5]           ; N/A     ;
-; count_cs_debug[5]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[5]           ; N/A     ;
-; count_cs_debug[6]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[6]           ; N/A     ;
-; count_cs_debug[6]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[6]           ; N/A     ;
-; count_cs_debug[7]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[7]           ; N/A     ;
-; count_cs_debug[7]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[7]           ; N/A     ;
-; heartbeat                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; heartbeat:heartbeat_uut|clock_state                                                                ; N/A     ;
-; heartbeat                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; heartbeat:heartbeat_uut|clock_state                                                                ; N/A     ;
-; reset_n                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; reset_n                                                                                            ; N/A     ;
-; reset_n                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; reset_n                                                                                            ; N/A     ;
-; spi_miso_data_cc_output[0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[0]                                                    ; N/A     ;
-; spi_miso_data_cc_output[0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[0]                                                    ; N/A     ;
-; spi_miso_data_cc_output[1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[1]                                                    ; N/A     ;
-; spi_miso_data_cc_output[1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[1]                                                    ; N/A     ;
-; spi_miso_data_cc_output[2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[2]                                                    ; N/A     ;
-; spi_miso_data_cc_output[2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[2]                                                    ; N/A     ;
-; spi_miso_data_cc_output[3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[3]                                                    ; N/A     ;
-; spi_miso_data_cc_output[3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[3]                                                    ; N/A     ;
-; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[4]                                                    ; N/A     ;
-; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[4]                                                    ; N/A     ;
-; spi_miso_data_cc_output[5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[5]                                                    ; N/A     ;
-; spi_miso_data_cc_output[5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[5]                                                    ; N/A     ;
-; spi_miso_data_cc_output[6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[6]                                                    ; N/A     ;
-; spi_miso_data_cc_output[6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[6]                                                    ; N/A     ;
-; spi_miso_data_cc_output[7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[7]                                                    ; N/A     ;
-; spi_miso_data_cc_output[7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_mosi_bit_count[7]                                                    ; N/A     ;
-; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[0]                                                                                   ; N/A     ;
-; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[0]                                                                                   ; N/A     ;
-; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[10]                                                                                  ; N/A     ;
-; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[10]                                                                                  ; N/A     ;
-; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[11]                                                                                  ; N/A     ;
-; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[11]                                                                                  ; N/A     ;
-; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[12]                                                                                  ; N/A     ;
-; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[12]                                                                                  ; N/A     ;
-; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[13]                                                                                  ; N/A     ;
-; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[13]                                                                                  ; N/A     ;
-; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[14]                                                                                  ; N/A     ;
-; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[14]                                                                                  ; N/A     ;
-; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[15]                                                                                  ; N/A     ;
-; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[15]                                                                                  ; N/A     ;
-; spi_miso_data_output[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[16]                                                                                  ; N/A     ;
-; spi_miso_data_output[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[16]                                                                                  ; N/A     ;
-; spi_miso_data_output[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[17]                                                                                  ; N/A     ;
-; spi_miso_data_output[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[17]                                                                                  ; N/A     ;
-; spi_miso_data_output[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[18]                                                                                  ; N/A     ;
-; spi_miso_data_output[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[18]                                                                                  ; N/A     ;
-; spi_miso_data_output[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[19]                                                                                  ; N/A     ;
-; spi_miso_data_output[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[19]                                                                                  ; N/A     ;
-; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[1]                                                                                   ; N/A     ;
-; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[1]                                                                                   ; N/A     ;
-; spi_miso_data_output[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[20]                                                                                  ; N/A     ;
-; spi_miso_data_output[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[20]                                                                                  ; N/A     ;
-; spi_miso_data_output[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[21]                                                                                  ; N/A     ;
-; spi_miso_data_output[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[21]                                                                                  ; N/A     ;
-; spi_miso_data_output[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[22]                                                                                  ; N/A     ;
-; spi_miso_data_output[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[22]                                                                                  ; N/A     ;
-; spi_miso_data_output[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[23]                                                                                  ; N/A     ;
-; spi_miso_data_output[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[23]                                                                                  ; N/A     ;
-; spi_miso_data_output[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[24]                                                                                  ; N/A     ;
-; spi_miso_data_output[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[24]                                                                                  ; N/A     ;
-; spi_miso_data_output[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[25]                                                                                  ; N/A     ;
-; spi_miso_data_output[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[25]                                                                                  ; N/A     ;
-; spi_miso_data_output[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[26]                                                                                  ; N/A     ;
-; spi_miso_data_output[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[26]                                                                                  ; N/A     ;
-; spi_miso_data_output[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[27]                                                                                  ; N/A     ;
-; spi_miso_data_output[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[27]                                                                                  ; N/A     ;
-; spi_miso_data_output[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[28]                                                                                  ; N/A     ;
-; spi_miso_data_output[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[28]                                                                                  ; N/A     ;
-; spi_miso_data_output[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[29]                                                                                  ; N/A     ;
-; spi_miso_data_output[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[29]                                                                                  ; N/A     ;
-; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[2]                                                                                   ; N/A     ;
-; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[2]                                                                                   ; N/A     ;
-; spi_miso_data_output[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[30]                                                                                  ; N/A     ;
-; spi_miso_data_output[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[30]                                                                                  ; N/A     ;
-; spi_miso_data_output[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[31]                                                                                  ; N/A     ;
-; spi_miso_data_output[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[31]                                                                                  ; N/A     ;
-; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[3]                                                                                   ; N/A     ;
-; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[3]                                                                                   ; N/A     ;
-; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[4]                                                                                   ; N/A     ;
-; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[4]                                                                                   ; N/A     ;
-; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[5]                                                                                   ; N/A     ;
-; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[5]                                                                                   ; N/A     ;
-; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[6]                                                                                   ; N/A     ;
-; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[6]                                                                                   ; N/A     ;
-; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[7]                                                                                   ; N/A     ;
-; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[7]                                                                                   ; N/A     ;
-; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[8]                                                                                   ; N/A     ;
-; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[8]                                                                                   ; N/A     ;
-; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[9]                                                                                   ; N/A     ;
-; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; spi_miso_data[9]                                                                                   ; N/A     ;
-; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                         ; N/A     ;
-; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                         ; N/A     ;
-; state[1]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[1]                                                         ; N/A     ;
-; state[1]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[1]                                                         ; N/A     ;
-; state[2]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[2]                                                         ; N/A     ;
-; state[2]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[2]                                                         ; N/A     ;
-; state[3]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; state[3]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; state[4]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; state[4]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                               ; N/A     ;
-; system_clock               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_clock                                                                                       ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                ; N/A     ;
-+----------------------------+---------------+-----------+--------------------------------+-------------------+----------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                    ;
++----------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; Name                       ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                                                                         ; Details ;
++----------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; SPI_CS                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_CS_Temp~_wirecell                                                                           ; N/A     ;
+; SPI_CS                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_CS_Temp~_wirecell                                                                           ; N/A     ;
+; SPI_MISO                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_MISO                                                                                                                  ; N/A     ;
+; SPI_MISO                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_MISO                                                                                                                  ; N/A     ;
+; SPI_MOSI                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_MOSI_Temp                                                                                   ; N/A     ;
+; SPI_MOSI                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_MOSI_Temp                                                                                   ; N/A     ;
+; SPI_RESET                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp~_wirecell                                                                        ; N/A     ;
+; SPI_RESET                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|SPI_RESET_Temp~_wirecell                                                                        ; N/A     ;
+; SPI_SCLK                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state~_wirecell                        ; N/A     ;
+; SPI_SCLK                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|spi_sclk_clock_state~_wirecell                        ; N/A     ;
+; clock_4_167Mhz_debug       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1|clock_state ; N/A     ;
+; clock_4_167Mhz_debug       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1|clock_state ; N/A     ;
+; count_cs_debug[0]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0]                                  ; N/A     ;
+; count_cs_debug[0]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[0]                                  ; N/A     ;
+; count_cs_debug[1]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[1]                                  ; N/A     ;
+; count_cs_debug[1]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[1]                                  ; N/A     ;
+; count_cs_debug[2]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[2]                                  ; N/A     ;
+; count_cs_debug[2]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[2]                                  ; N/A     ;
+; count_cs_debug[3]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[3]                                  ; N/A     ;
+; count_cs_debug[3]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[3]                                  ; N/A     ;
+; count_cs_debug[4]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[4]                                  ; N/A     ;
+; count_cs_debug[4]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[4]                                  ; N/A     ;
+; count_cs_debug[5]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[5]                                  ; N/A     ;
+; count_cs_debug[5]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[5]                                  ; N/A     ;
+; count_cs_debug[6]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[6]                                  ; N/A     ;
+; count_cs_debug[6]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[6]                                  ; N/A     ;
+; count_cs_debug[7]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[7]                                  ; N/A     ;
+; count_cs_debug[7]          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|CLOCK_CYCLES_Temp[7]                                  ; N/A     ;
+; heartbeat                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; heartbeat:heartbeat_uut|clock_state                                                                                       ; N/A     ;
+; heartbeat                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; heartbeat:heartbeat_uut|clock_state                                                                                       ; N/A     ;
+; reset_n                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; reset_n                                                                                                                   ; N/A     ;
+; reset_n                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; reset_n                                                                                                                   ; N/A     ;
+; spi_miso_data_cc_output[0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_cc_output[7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; spi_miso_data_output[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                                                ; N/A     ;
+; state[0]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[0]                                                                                ; N/A     ;
+; state[1]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[1]                                                                                ; N/A     ;
+; state[1]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[1]                                                                                ; N/A     ;
+; state[2]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[2]                                                                                ; N/A     ;
+; state[2]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SPI_Master:SPI_Master_uut|current_state[2]                                                                                ; N/A     ;
+; state[3]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; state[3]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; state[4]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; state[4]                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                      ; N/A     ;
+; system_clock               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_clock                                                                                                              ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|gnd       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
+; auto_signaltap_0|vcc       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                                                       ; N/A     ;
++----------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------+
@@ -821,7 +846,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Jun  5 18:18:04 2025
+    Info: Processing started: Fri Jun  6 09:03:16 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADS131A0X -c ADS131A0X
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -843,14 +868,17 @@ Warning (10034): Output port "adc_init_completed" at ADS131A0X.v(32) has no driv
 Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:heartbeat_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 49
 Info (12128): Elaborating entity "SPI_Master" for hierarchy "SPI_Master:SPI_Master_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 69
 Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(26): object "message_part_0555" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 26
+Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(27): object "message_part_0655" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 27
+Warning (10036): Verilog HDL or VHDL warning at SPI_master.v(28): object "message_part_0000" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 28
 Warning (10230): Verilog HDL assignment warning at SPI_master.v(170): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 170
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(234): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 234
-Warning (10230): Verilog HDL assignment warning at SPI_master.v(249): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 249
+Warning (10240): Verilog HDL Always Construct warning at SPI_master.v(228): inferring latch(es) for variable "SPI_MOSI_Temp", which holds its previous value in one or more paths through the always construct File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 228
+Info (10041): Inferred latch for "SPI_MOSI_Temp" at SPI_master.v(228) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 228
 Info (12128): Elaborating entity "spi_sclk_generator" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/SPI_master.v Line: 72
 Warning (10036): Verilog HDL or VHDL warning at spi_sclk_generator.v(22): object "spi_sclk_counter" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 22
 Warning (10036): Verilog HDL or VHDL warning at spi_sclk_generator.v(25): object "spi_transaction_done_Temp" assigned a value but never read File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 25
-Warning (10230): Verilog HDL assignment warning at spi_sclk_generator.v(47): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 47
-Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 34
+Warning (10230): Verilog HDL assignment warning at spi_sclk_generator.v(56): truncated value with size 32 to match size of target (8) File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 56
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_0" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 35
+Info (12128): Elaborating entity "clock_synthesizer" for hierarchy "SPI_Master:SPI_Master_uut|spi_sclk_generator:spi_sclk_generator_uut|clock_synthesizer:clock_synthesizer_uut_1" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/spi_sclk_generator.v Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ua24.tdf
     Info (12023): Found entity 1: altsyncram_ua24 File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/db/altsyncram_ua24.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ksc.tdf
@@ -873,7 +901,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ggc File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/db/cmpr_ggc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.06.05.18:18:18 Progress: Loading slda5d34450/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.06.06.09:03:29 Progress: Loading slda5d34450/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -905,6 +933,46 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "state_tracker_output[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
     Warning (13410): Pin "state_tracker_output[3]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
     Warning (13410): Pin "state_tracker_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 35
+    Warning (13410): Pin "spi_miso_data_output[0]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[1]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[3]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[5]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[6]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[7]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[8]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[9]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[10]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[11]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[12]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[13]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[14]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[15]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[16]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[17]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[18]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[19]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[20]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[21]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[22]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[23]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[24]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[25]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[26]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[27]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[28]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[29]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[30]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_output[31]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 36
+    Warning (13410): Pin "spi_miso_data_cc_output[0]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[1]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[2]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[3]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[4]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[5]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[6]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
+    Warning (13410): Pin "spi_miso_data_cc_output[7]" is stuck at GND File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 38
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 155 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -912,15 +980,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "adc_init" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 25
     Warning (15610): No output dependent on input pin "adc_ready" File: C:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_Library/ADS131A0X.v Line: 26
-Info (21057): Implemented 1867 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1832 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 1731 logic cells
+    Info (21061): Implemented 1696 logic cells
     Info (21064): Implemented 61 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 4848 megabytes
-    Info: Processing ended: Thu Jun  5 18:18:28 2025
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:15
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4851 megabytes
+    Info: Processing ended: Fri Jun  6 09:03:38 2025
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:20
 
 

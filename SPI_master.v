@@ -221,48 +221,154 @@ clock_synthesizer_uut
 /* SPI MOSI Handler */
 // This block handles SPI MOSI Signals
 reg [7:0]	spi_mosi_bit_count 	= 'd0;
-reg 			spi_mosi_byte_count	= 'd0;
+reg 			spi_mosi_byte_count	= 'd1;
 
-always @ (posedge SPI_SCLK_internal_use)
+always @ (*) //(posedge SPI_SCLK_internal_use)
 begin
 	if(current_state == TRANSACTION_IN_PROGRESS)
 		begin
 			case(spi_mosi_byte_count)
-			0: 
-				begin 
-					SPI_MOSI_Temp 			<= message_part_0000[number_of_bits - spi_mosi_bit_count];
-					spi_mosi_bit_count 	<= spi_mosi_bit_count + 'd1;
-					/*
-					if(spi_mosi_bit_count == 'd16)
-						begin
-							spi_mosi_bit_count 	<= 'd0;
-						end
-					*/
-					if(spi_miso_data_input == 32'hff04_0000)
-						begin
-							spi_mosi_byte_count 	<= 'd1;
-						end
-				end
-			1: 
-				begin
-					SPI_MOSI_Temp 			<= message_part_0655[number_of_bits - spi_mosi_bit_count];
-					spi_mosi_bit_count 	<= spi_mosi_bit_count + 'd1;
-					if(spi_miso_data_input == 32'h0655_0101)
-						begin
-							spi_mosi_byte_count 	<= 'd0;
-						end
-				end
-			default:
-				begin
-					SPI_MOSI_Temp 			<= 'd0;
-					spi_mosi_bit_count 	<= 'd0;	
-					spi_mosi_byte_count 	<= 'd0;
-				end
+				0:
+					case(count_cs_tracker)
+						0:  SPI_MOSI_Temp = 1;  // preamble (before bit 0)
+						1:  SPI_MOSI_Temp = 0;  // bit 0
+						2:  SPI_MOSI_Temp = 0;
+						3:  SPI_MOSI_Temp = 0;  // bit 1
+						4:  SPI_MOSI_Temp = 0;
+						5:  SPI_MOSI_Temp = 0;  // bit 2
+						6:  SPI_MOSI_Temp = 0;
+						7:  SPI_MOSI_Temp = 0;  // bit 3
+						8:  SPI_MOSI_Temp = 0;
+						9:  SPI_MOSI_Temp = 0;  // bit 4
+						10: SPI_MOSI_Temp = 0;
+						11: SPI_MOSI_Temp = 0;  // bit 5
+						12: SPI_MOSI_Temp = 0;
+						13: SPI_MOSI_Temp = 0;  // bit 6
+						14: SPI_MOSI_Temp = 0;
+						15: SPI_MOSI_Temp = 0;  // bit 7
+						16: SPI_MOSI_Temp = 0;
+						17: SPI_MOSI_Temp = 0;  // bit 8
+						18: SPI_MOSI_Temp = 0;
+						19: SPI_MOSI_Temp = 0;  // bit 9
+						20: SPI_MOSI_Temp = 0;
+						21: SPI_MOSI_Temp = 0;  // bit 10
+						22: SPI_MOSI_Temp = 0;
+						23: SPI_MOSI_Temp = 0;  // bit 11
+						24: SPI_MOSI_Temp = 0;
+						25: SPI_MOSI_Temp = 0;  // bit 12
+						26: SPI_MOSI_Temp = 0;
+						27: SPI_MOSI_Temp = 0;  // bit 13
+						28: SPI_MOSI_Temp = 0;
+						29: SPI_MOSI_Temp = 0;  // bit 14
+						30: SPI_MOSI_Temp = 0;
+						31: SPI_MOSI_Temp = 0;  // bit 15
+						32: SPI_MOSI_Temp = 0;  // between bit 15 and 16 (optional transition or sync)
+						33: SPI_MOSI_Temp = 0;  // bit 16
+						34: SPI_MOSI_Temp = 0;
+						35: SPI_MOSI_Temp = 0;  // bit 17
+						36: SPI_MOSI_Temp = 0;
+						37: SPI_MOSI_Temp = 0;  // bit 18
+						38: SPI_MOSI_Temp = 0;
+						39: SPI_MOSI_Temp = 0;  // bit 19
+						40: SPI_MOSI_Temp = 0;
+						41: SPI_MOSI_Temp = 0;  // bit 20
+						42: SPI_MOSI_Temp = 0;
+						43: SPI_MOSI_Temp = 0;  // bit 21
+						44: SPI_MOSI_Temp = 0;
+						45: SPI_MOSI_Temp = 0;  // bit 22
+						46: SPI_MOSI_Temp = 0;
+						47: SPI_MOSI_Temp = 0;  // bit 23
+						48: SPI_MOSI_Temp = 0;
+						49: SPI_MOSI_Temp = 0;  // bit 24
+						50: SPI_MOSI_Temp = 0;
+						51: SPI_MOSI_Temp = 0;  // bit 25
+						52: SPI_MOSI_Temp = 0;
+						53: SPI_MOSI_Temp = 0;  // bit 26
+						54: SPI_MOSI_Temp = 0;
+						55: SPI_MOSI_Temp = 0;  // bit 27
+						56: SPI_MOSI_Temp = 0;
+						57: SPI_MOSI_Temp = 0;  // bit 28
+						58: SPI_MOSI_Temp = 0;
+						59: SPI_MOSI_Temp = 0;  // bit 29
+						60: SPI_MOSI_Temp = 0;
+						61: SPI_MOSI_Temp = 0;  // bit 30
+						62: SPI_MOSI_Temp = 0;
+						63: SPI_MOSI_Temp = 0;  // bit 31
+						64: SPI_MOSI_Temp = 0;  // end pulse or final transition
+						default: SPI_MOSI_Temp = 1;
+					endcase
+		
+				1:
+					case(count_cs_tracker)
+						0:  SPI_MOSI_Temp = 1;  // preamble (before bit 0)
+						1:  SPI_MOSI_Temp = 0;  // bit 0
+						2:  SPI_MOSI_Temp = 0;
+						3:  SPI_MOSI_Temp = 0;  // bit 1
+						4:  SPI_MOSI_Temp = 0;
+						5:  SPI_MOSI_Temp = 0;  // bit 2
+						6:  SPI_MOSI_Temp = 0;
+						7:  SPI_MOSI_Temp = 0;  // bit 3
+						8:  SPI_MOSI_Temp = 0;
+						9:  SPI_MOSI_Temp = 0;  // bit 4
+						10: SPI_MOSI_Temp = 0;
+						11: SPI_MOSI_Temp = 1;  // bit 5
+						12: SPI_MOSI_Temp = 1;
+						13: SPI_MOSI_Temp = 1;  // bit 6
+						14: SPI_MOSI_Temp = 1;
+						15: SPI_MOSI_Temp = 0;  // bit 7
+						16: SPI_MOSI_Temp = 0;
+						17: SPI_MOSI_Temp = 0;  // bit 8
+						18: SPI_MOSI_Temp = 0;
+						19: SPI_MOSI_Temp = 1;  // bit 9
+						20: SPI_MOSI_Temp = 1;
+						21: SPI_MOSI_Temp = 0;  // bit 10
+						22: SPI_MOSI_Temp = 0;
+						23: SPI_MOSI_Temp = 1;  // bit 11
+						24: SPI_MOSI_Temp = 1;
+						25: SPI_MOSI_Temp = 0;  // bit 12
+						26: SPI_MOSI_Temp = 0;
+						27: SPI_MOSI_Temp = 1;  // bit 13
+						28: SPI_MOSI_Temp = 1;
+						29: SPI_MOSI_Temp = 0;  // bit 14
+						30: SPI_MOSI_Temp = 0;
+						31: SPI_MOSI_Temp = 1;  // bit 15
+						32: SPI_MOSI_Temp = 1;  
+						33: SPI_MOSI_Temp = 0;  // bit 16
+						34: SPI_MOSI_Temp = 0;
+						35: SPI_MOSI_Temp = 0;  // bit 17
+						36: SPI_MOSI_Temp = 0;
+						37: SPI_MOSI_Temp = 0;  // bit 18
+						38: SPI_MOSI_Temp = 0;
+						39: SPI_MOSI_Temp = 0;  // bit 19
+						40: SPI_MOSI_Temp = 0;
+						41: SPI_MOSI_Temp = 0;  // bit 20
+						42: SPI_MOSI_Temp = 0;
+						43: SPI_MOSI_Temp = 0;  // bit 21
+						44: SPI_MOSI_Temp = 0;
+						45: SPI_MOSI_Temp = 0;  // bit 22
+						46: SPI_MOSI_Temp = 0;
+						47: SPI_MOSI_Temp = 0;  // bit 23
+						48: SPI_MOSI_Temp = 0;
+						49: SPI_MOSI_Temp = 0;  // bit 24
+						50: SPI_MOSI_Temp = 0;
+						51: SPI_MOSI_Temp = 0;  // bit 25
+						52: SPI_MOSI_Temp = 0;
+						53: SPI_MOSI_Temp = 0;  // bit 26
+						54: SPI_MOSI_Temp = 0;
+						55: SPI_MOSI_Temp = 0;  // bit 27
+						56: SPI_MOSI_Temp = 0;
+						57: SPI_MOSI_Temp = 0;  // bit 28
+						58: SPI_MOSI_Temp = 0;
+						59: SPI_MOSI_Temp = 0;  // bit 29
+						60: SPI_MOSI_Temp = 0;
+						61: SPI_MOSI_Temp = 0;  // bit 30
+						62: SPI_MOSI_Temp = 0;
+						63: SPI_MOSI_Temp = 0;  // bit 31
+						64: SPI_MOSI_Temp = 0;  // end pulse or final transition
+						default: SPI_MOSI_Temp = 1;
+					endcase
 			endcase
 		end
-	else
-		spi_mosi_bit_count	<= 'd0;
-
 end
 
 	// Core Signals 
@@ -271,7 +377,7 @@ end
 	assign SPI_RESET						= SPI_RESET_Temp;
 	
 	// Debug by Dennis
-	assign clock_4_167Mhz_debug		= synthesized_clock_4_167Mhz;
+	assign clock_4_167Mhz_debug		= SPI_SCLK_internal_use; //synthesized_clock_4_167Mhz;
 	assign state 							= current_state;
 	assign count_cs 						= count_cs_tracker;
 	assign state_tracker_output 		= state_tracker;
