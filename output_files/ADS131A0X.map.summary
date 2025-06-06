@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Jun  6 09:03:38 2025
+Analysis & Synthesis Status : Successful - Fri Jun  6 09:51:27 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : ADS131A0X
 Top-level Entity Name : ADS131A0X
 Family : Cyclone 10 LP
-Total logic elements : 1,674
-    Total combinational functions : 918
-    Dedicated logic registers : 1,325
-Total registers : 1325
+Total logic elements : 1,681
+    Total combinational functions : 925
+    Dedicated logic registers : 1,328
+Total registers : 1328
 Total pins : 70
 Total virtual pins : 0
 Total memory bits : 124,928

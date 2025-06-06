@@ -69,7 +69,7 @@ begin
 		end
 end
  
-assign SPI_SCLK_internal_use	= synthesized_clock_4_167Mhz;
+assign SPI_SCLK_internal_use	= spi_sclk_clock_state;
 assign SPI_SCLK 					= spi_sclk_clock_state; //(CLOCK_CYCLES_Temp <= 32) ? spi_sclk_clock_state: 'd0;
 assign CLOCK_CYCLES 				= CLOCK_CYCLES_Temp;
 
