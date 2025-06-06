@@ -28,17 +28,18 @@ module ADS131A0X (
 	/* Debugging purposes */
 	// for debugging this module use only, do not include when integrating with main design
 	output				clock_4_167Mhz_debug,		// Keeps track of the main clock used in Submodule
-	output [2:0]		state,					 		// Keeps track of the current state of SPI 		- for debugging (remove in final design)
+	output [4:0]		state,					 		// Keeps track of the current state of SPI 		- for debugging (remove in final design)
 	output 				adc_init_completed, 			// Keeps track of the init progress of the ADC 	- for debugging (remove in final design)
 	output [7:0]		count_cs_debug,
 	output				heartbeat,		
 	output [4:0]		state_tracker_output,
-	output [15:0]		spi_miso_data_output,
-	output [4:0]		spi_miso_data_cc_output
+	output [31:0]		spi_miso_data_output,
+	output [7:0]		spi_miso_data_cc_output
 	);
 
 wire SPI_SCLK_Temp;										// SPI Clock
 wire [7:0] count_cs;
+wire [7:0] spi_miso_data_cc;
 
 /* Heartbeat Instance */
 heartbeat heartbeat_uut
@@ -60,18 +61,25 @@ SPI_Master SPI_Master_uut
 	
 	// Non crucial Signals (for simulation and debugging)
 	.clock_4_167Mhz_debug(clock_4_167Mhz_debug),
-	.adc_init_completed(adc_init_completed),
 	.state(state),												// Keeps track of the current state of SPI
-	.adc_init(adc_init),										// Trigger signal to init the adc
-	.adc_ready(adc_ready),									// Trigger signal to send SPI transaction
 	.count_cs(count_cs),
 	.state_tracker_output(state_tracker_output),
-	.spi_miso_data_output(spi_miso_data_output),		// Keeps track of the SPI MISO in real time
-	.spi_miso_data_cc_output(spi_miso_data_cc_output)
+	.spi_miso_data_input(spi_miso_data),				// debug - keeps track of the spi_miso_data received
+	.spi_miso_data_cc_output(spi_miso_data_cc)
 );
 
-	
-assign SPI_SCLK = SPI_SCLK_Temp;
-assign count_cs_debug = count_cs;						
+/* Captures Input from the ADC via SPI_MISO */
+reg [31:0] spi_miso_data = 32'd0;
+always @ (negedge SPI_SCLK_Temp)
+begin
+	spi_miso_data['d32 - spi_miso_data_cc] <= SPI_MISO;
+end
+
+assign SPI_SCLK = SPI_SCLK_Temp;							// Core Signal
+
+// Debug by Dennis 
+assign spi_miso_data_output = spi_miso_data;			// For Visualizing the data at SPI_MISO 
+assign count_cs_debug = count_cs;	
+assign spi_miso_data_cc_output = spi_miso_data_cc;					
 
 endmodule
