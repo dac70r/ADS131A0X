@@ -216,11 +216,55 @@
 					"strict" : false
 				},
 				{
-					"name" : "system_clock",
+					"name" : "spi_mosi_byte_count_output[0]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_mosi_byte_count_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "spi_transaction_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "trigger",
 					"strict" : false
 				},
 				{
 					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "system_clock",
 					"strict" : false
 				},
 				{

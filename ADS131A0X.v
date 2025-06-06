@@ -19,11 +19,10 @@ module ADS131A0X (
 	 output 				SPI_RESET,				// SPI_RESET
 	 output 				SPI_MOSI,				// SPI MOSI
 	 input 				SPI_MISO,				// SPI MISO
-
+	 
 	 /* Supplementary SPI Signals for ADC */
 	 // for development purposes, tbc inclusion in main design
-	 input				adc_init,			 			// Trigger signal to init the adc					- for simulation (consider removing in final design)
-	 input 				adc_ready,				 		// Trigger signal to send SPI transaction			- for simulation (consider removing in final design)
+	 input				trigger,			 			// Trigger signal to init the adc					- for simulation (consider removing in final design)
 	
 	/* Debugging purposes */
 	// for debugging this module use only, do not include when integrating with main design
@@ -34,7 +33,10 @@ module ADS131A0X (
 	output				heartbeat,		
 	output [4:0]		state_tracker_output,
 	output [31:0]		spi_miso_data_output,
-	output [7:0]		spi_miso_data_cc_output
+	output [7:0]		spi_miso_data_cc_output,
+	output [3:0] 		spi_mosi_byte_count_output,	
+	output [7:0]		spi_transaction_count,
+	output				spi_sclk_clock_state_2_removed_output
 	);
 
 wire SPI_SCLK_Temp;										// SPI Clock
@@ -58,6 +60,7 @@ SPI_Master SPI_Master_uut
 	.SPI_CS(SPI_CS),											//	SPI CS
 	.SPI_SCLK(SPI_SCLK_Temp),								// SPI SCLK
 	.SPI_RESET(SPI_RESET),
+	.trigger(trigger),
 	
 	// Non crucial Signals (for simulation and debugging)
 	.clock_4_167Mhz_debug(clock_4_167Mhz_debug),
@@ -65,7 +68,10 @@ SPI_Master SPI_Master_uut
 	.count_cs(count_cs),
 	.state_tracker_output(state_tracker_output),
 	.spi_miso_data_input(spi_miso_data),				// debug - keeps track of the spi_miso_data received
-	.spi_miso_data_cc_output(spi_miso_data_cc)
+	.spi_miso_data_cc_output(spi_miso_data_cc),
+	.spi_mosi_byte_count_output(spi_mosi_byte_count_output),
+	.spi_transaction_count(spi_transaction_count),
+	.spi_sclk_clock_state_2_removed_output(spi_sclk_clock_state_2_removed_output)
 );
 
 /* Captures Input from the ADC via SPI_MISO */
