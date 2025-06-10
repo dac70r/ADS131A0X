@@ -1,0 +1,13 @@
+../adc_drivers/ADS131A0x.c:23:6:ADS131A0xReset	8	static
+../adc_drivers/ADS131A0x.c:30:6:ADS131A0xSetCS	16	static
+../adc_drivers/ADS131A0x.c:43:6:ADS131A0xXferWord	24	static
+../adc_drivers/ADS131A0x.c:49:10:ADS131A0xSendCmd	32	static
+../adc_drivers/ADS131A0x.c:80:10:ADS131A0xReadRegister	24	static
+../adc_drivers/ADS131A0x.c:95:10:ADS131A0xWriteRegister	24	static
+../adc_drivers/ADS131A0x.c:109:6:ADS131A0xWriteMultiRegister	24	static
+../adc_drivers/ADS131A0x.c:113:6:ADS131A0xInit	16	static
+../adc_drivers/ADS131A0x.c:162:17:ADS131A0xGetChannels	48	static
+../adc_drivers/ADS131A0x.c:177:6:StartExtADC	8	static
+../adc_drivers/ADS131A0x.c:182:6:HAL_SPI_TxRxCpltCallback	16	static
+../adc_drivers/ADS131A0x.c:187:6:HAL_GPIO_EXTI_Callback	24	static
+../adc_drivers/ADS131A0x.c:196:6:RUN_ADC	16	static
